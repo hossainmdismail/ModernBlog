@@ -17,8 +17,9 @@ return new class extends Migration
             $table->integer('category_id');
             $table->integer('sub_category_id');
             $table->string('title');
+            $table->string('photo');
             $table->longText('content');
-            $table->bigInteger('views');
+            $table->integer('views');
             $table->enum('premium',['free','premium'])->default('free');
             $table->integer('status')->default(1);
             $table->timestamps();

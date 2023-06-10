@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('category_id');
             $table->string('name');
+            $table->string('photo')->nullable();
             $table->integer('status')->default(1);
             $table->string('meta_title');
             $table->string('meta_tags');
