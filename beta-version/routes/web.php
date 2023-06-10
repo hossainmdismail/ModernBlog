@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +26,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
+
+
+
+//========= BackEnd Controllers =========//
+
+Route::resources([
+    'category'      => CategoryController::class,
+    'subcategory'   => SubCategoryController::class,
+    'blogpost'      => BlogPostController::class,
+]);

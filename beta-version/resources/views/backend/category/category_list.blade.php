@@ -11,7 +11,7 @@
                         <p class="mb-0">Use category list as to describe your overall core business from the provided list. <br>
                         Click the name of the category where you want to add a list item. .</p>
                     </div>
-                    <a href="page-add-category.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Category</a>
+                    <a href="{{ route('category.create') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Category</a>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -60,11 +60,11 @@
                                     <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
                                         href="#"><i class="ri-pencil-line mr-0"></i></a>
                                     <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                        href="#"><i class="ri-delete-bin-line mr-0"></i></a>
+                                        href="{{ route('category.destroy',1) }}"><i class="ri-delete-bin-line mr-0"></i></a>
                                 </div>
                             </td>
                         </tr>
-                        
+
                     </tbody>
                 </table>
             </div>

@@ -12,23 +12,24 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="https://templates.iqonic.design/posdash/html/backend/page-list-category.html" data-toggle="validator">
+                        <form action="{{ route('category.store') }}"  method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Category Name *</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Category Name" required>
+                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Category Name"  value="{{ old('name') }}">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Photo</label>
-                                        <input type="file" class="form-control image-file" name="photo" accept="image/*">
+                                        <input type="file" class="form-control image-file @error('photo') is-invalid @enderror" name="photo" accept="image/*">
                                     </div>
                                 </div>
 
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Status *</label>
                                         <select name="status" class="selectpicker form-control" data-style="py-0">
@@ -37,25 +38,27 @@
 
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
+                                <hr>
+
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Meta Title *</label>
-                                        <input type="text" name="meta_title" class="form-control" placeholder="Meta Title" required>
+                                        <input type="text" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" placeholder="Meta Title">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Meta Tage *</label>
-                                        <input type="text" name="meta_tags[]" class="form-control" placeholder="Meta Tage" required>
+                                        <input type="text" name="meta_tags" class="form-control @error('meta_tags') is-invalid @enderror" placeholder="Meta Tage">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Meta Description *</label>
-                                        <textarea name="meta_descp" class="form-control" placeholder="Meta Description" id="" cols="80" rows="4"></textarea>
+                                        <textarea name="meta_descp" class="form-control @error('meta_descp') is-invalid @enderror" placeholder="Meta Description" id="" cols="80" rows="4"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
