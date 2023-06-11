@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Sub_Category;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Photo;
 
 class SubCategoryController extends Controller
 {
@@ -11,7 +15,10 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data       = Sub_Category::where('status', 1)->get();
+        return view('backend.subcategory.subcategory_list',[
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -19,7 +26,10 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categorys  = Category::all();
+        return view('backend.subcategory.subcategory_add', [
+            'categorys' => $categorys,
+        ]);
     }
 
     /**
@@ -27,7 +37,30 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // print_r(json_encode($request->all()));
+        // // echo $request->photo;
+        // die();
+        // dd($request);
+
+        $request->validate([
+            'category_id'   => 'required',
+            'name'          => 'required',
+            'photo'         => 'required',
+            'meta_title'    => 'required',
+            'meta_tags'     => 'required',
+            'meta_descp'    => 'required',
+        ]);
+        Photo::upload($request->photo ,'uploads/Subcategory','CAT',['500','500']);
+        Sub_Category::insert([
+            'category_id'   => $request->category_id,
+            'name'          => $request->name,
+            'photo'         => Photo::$name,
+            'meta_title'    => $request->meta_title,
+            'meta_tags'     => $request->meta_tags,
+            'meta_descp'    => $request->meta_descp,
+            'created_at'    => Carbon::now(),
+        ]);
+        return back();
     }
 
     /**

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog_Posts;
+use App\Models\Category;
+use App\Models\Sub_Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BlogPostController extends Controller
@@ -11,7 +15,10 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        //
+        $data       = Blog_Posts::where('status', 1)->get();
+        return view('backend.blogpost.blogpost_list',[
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -19,7 +26,14 @@ class BlogPostController extends Controller
      */
     public function create()
     {
-        //
+
+        $categorys  = Category::all();
+        $subcategorys  = Sub_Category::all();
+        return view('backend.blogpost.blogpost_add', [
+            'categorys' => $categorys,
+            'subcategorys' => $subcategorys,
+
+        ]);
     }
 
     /**

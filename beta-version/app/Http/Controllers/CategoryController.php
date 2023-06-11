@@ -19,7 +19,7 @@ class CategoryController extends Controller
             'data' => $data,
         ]);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
