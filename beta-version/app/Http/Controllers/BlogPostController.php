@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Sub_Category;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Photo;
 
 class BlogPostController extends Controller
 {
@@ -43,7 +44,15 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
-        print_r($request->all());
+        $request->validate([
+            'category_id' => 'required|integer',
+            'sub_category_id' => 'required|integer',
+            'blog_type' => 'required|string',
+            'title' => 'required|string',
+            'content' => 'required',
+            'photo' => 'required|mimes:jpg,png,svg,jpeg,webp',
+        ]);
+        Photo::upload($request->photo ,'uploads/blog','BLOG',['1200','900']);
     }
 
     /**
