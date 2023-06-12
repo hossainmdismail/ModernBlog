@@ -136,26 +136,30 @@
 
 {{-- =============== ajax ================= --}}
 <script>
-    $('#category_id').change(function(){
-        var category_id = $(this).val();
+$(document).ready(function(){
+    // $('#category_id').change(function(){
+    //     console.log('hi');
+    //     // var category_id = $(this).val();
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+    //     // $.ajaxSetup({
+    //     //     headers: {
+    //     //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //     //     }
+    //     // });
 
-        $.ajax({
-            type:'POST',
-            url:'/getsubcat',
-            data:{'category_id':category_id},
-            success:function(data){
-                // alert(data);
-                const subcate = $('#sub_category_id').append(data);
-                console.log(subcate);
-            }
-        })
-    })
+    //     // $.ajax({
+    //     //     type:'GET',
+    //     //     url:'/getsubcat',
+    //     //     data:{'category_id':category_id},
+    //     //     success:function(data){
+    //     //         alert(data);
+    //     //          console.log(data);
+    //     //         // const subcate = $('#sub_category_id').append(data);
+    //     //         // console.log(subcate);
+    //     //     }
+    //     // })
+    // })
+});
 </script>
 
 @endsection
