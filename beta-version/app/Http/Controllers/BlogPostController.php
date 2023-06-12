@@ -15,9 +15,11 @@ class BlogPostController extends Controller
      */
     public function index()
     {
+        $blogposts  = Blog_Posts::all();
         $data       = Blog_Posts::where('status', 1)->get();
         return view('backend.blogpost.blogpost_list',[
             'data' => $data,
+            'blogposts' => $blogposts,
         ]);
     }
 
@@ -57,7 +59,12 @@ class BlogPostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categorys  = Category::all();
+        $subcategorys  = Sub_Category::all();
+        return view('backend.blogpost.blogpost_edit', [
+            'categorys'=>$categorys,
+            'subcategorys'=>$subcategorys,
+        ]);
     }
 
     /**

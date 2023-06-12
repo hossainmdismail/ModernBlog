@@ -15,9 +15,11 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
+        $subcategorys = Sub_Category::all();
         $data       = Sub_Category::where('status', 1)->get();
         return view('backend.subcategory.subcategory_list',[
             'data' => $data,
+            'subcategorys' => $subcategorys,
         ]);
     }
 
@@ -76,7 +78,11 @@ class SubCategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categorys  = Category::all();
+        return view('backend.subcategory.subcategory_edit', [
+            'categorys' => $categorys,
+        ]);
+
     }
 
     /**

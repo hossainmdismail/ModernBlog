@@ -25,8 +25,8 @@
                                     <label for="checkbox1" class="mb-0"></label>
                                 </div>
                             </th>
+                            {{-- <th>Photo</th> --}}
                             <th>Category Name</th>
-                            <th>Photo</th>
                             <th>Status</th>
                             <th>Meta Title</th>
                             <th>Meta Tage</th>
@@ -35,36 +35,45 @@
                         </tr>
                     </thead>
                     <tbody class="ligth-body">
-                        <tr>
-                            <td>
-                                <div class="checkbox d-inline-block">
-                                    <input type="checkbox" class="checkbox-input" id="checkbox2">
-                                    <label for="checkbox2" class="mb-0"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
-                                    <div>
-                                        Organic Cream
-                                        <p class="mb-0"><small>This is test Product</small></p>
+                        @foreach ($categorys as $category)
+                            <tr>
+                                <td>
+                                    <div class="checkbox d-inline-block">
+                                        <input type="checkbox" class="checkbox-input" id="checkbox2">
+                                        <label for="checkbox2" class="mb-0"></label>
                                     </div>
-                                </div>
-                            </td>
-                            <td>CREM01</td>
-                            <td>Beauty</td>
-                            <td>
-                                <div class="d-flex align-items-center list-action">
-                                    <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                        href="#"><i class="ri-eye-line mr-0"></i></a>
-                                    <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                        href="#"><i class="ri-pencil-line mr-0"></i></a>
-                                    <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                        href="{{ route('category.destroy',1) }}"><i class="ri-delete-bin-line mr-0"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{ asset('uploads/Category') }}/{{ $category->photo }}" class="img-fluid rounded avatar-50 mr-3" alt="image">
+                                        <div>
+                                            {{ $category->name }}
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>{{ $category->meta_title }}</td>
+                                <td>{{ $category->meta_tags }}</td>
+                                <td>{{ $category->meta_descp }}</td>
+                                <td>
+                                    @if($category->status == 1)
+                                        Active
+                                    @else
+                                        Deactive
+                                    @endif
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center list-action">
+                                        <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                            href="#"><i class="ri-eye-line mr-0"></i></a>
+                                        <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
+                                            href="{{ route('category.edit', $category->id) }}"><i class="ri-pencil-line mr-0"></i></a>
+                                        <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                                            href="{{ route('category.destroy',1) }}"><i class="ri-delete-bin-line mr-0"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

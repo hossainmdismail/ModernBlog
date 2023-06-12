@@ -14,12 +14,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $categorys = Category::all();
         $data = Category::where('status', 1)->get();
         return view('backend.category.category_list',[
             'data' => $data,
+            'categorys' => $categorys,
         ]);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
@@ -67,8 +69,10 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        echo $id;
-        //
+        $categorys = Category::where('id', $id)->get();
+        return view('backend.category.category_edit', [
+            'categorys'=>$categorys,
+        ]);
     }
 
     /**
@@ -76,7 +80,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        print_r($request->all());
+        die();
+
+        // Photo::upload($request->photo ,'uploads/Category','CAT',['500','500']);
+        // Category::find($request->id)->update([
+        //     'name'          => $request->name,
+        //     'photo'         => Photo::$name,
+        //     'meta_title'    => $request->meta_title,
+        //     'meta_tags'     => $request->meta_tags,
+        //     'meta_descp'    => $request->meta_descp,
+        // ]);
     }
 
     /**

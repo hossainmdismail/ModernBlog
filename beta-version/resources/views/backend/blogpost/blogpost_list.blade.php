@@ -38,36 +38,37 @@
                         </tr>
                     </thead>
                     <tbody class="ligth-body">
-                        <tr>
-                            <td>
-                                <div class="checkbox d-inline-block">
-                                    <input type="checkbox" class="checkbox-input" id="checkbox2">
-                                    <label for="checkbox2" class="mb-0"></label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
-                                    <div>
-                                        Organic Cream
-                                        <p class="mb-0"><small>This is test Product</small></p>
+                        @foreach ($blogposts as $blogpost)
+                            <tr>
+                                <td>
+                                    <div class="checkbox d-inline-block">
+                                        <input type="checkbox" class="checkbox-input" id="checkbox2">
+                                        <label for="checkbox2" class="mb-0"></label>
                                     </div>
-                                </div>
-                            </td>
-                            <td>CREM01</td>
-                            <td>Beauty</td>
-                            <td>
-                                <div class="d-flex align-items-center list-action">
-                                    <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                        href="#"><i class="ri-eye-line mr-0"></i></a>
-                                    <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                        href="#"><i class="ri-pencil-line mr-0"></i></a>
-                                    <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                        href="#"><i class="ri-delete-bin-line mr-0"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
+                                        <div>
+                                            Organic Cream
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>CREM01</td>
+                                <td>Beauty</td>
+                                <td>
+                                    <div class="d-flex align-items-center list-action">
+                                        <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
+                                            href="#"><i class="ri-eye-line mr-0"></i></a>
+                                        <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
+                                            href="{{ route('blogpost.edit', $blogpost->id) }}"><i class="ri-pencil-line mr-0"></i></a>
+                                        <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
+                                            href="#"><i class="ri-delete-bin-line mr-0"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
