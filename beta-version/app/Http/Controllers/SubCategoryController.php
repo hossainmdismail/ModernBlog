@@ -7,6 +7,7 @@ use App\Models\Sub_Category;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Photo;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SubCategoryController extends Controller
 {
@@ -62,6 +63,7 @@ class SubCategoryController extends Controller
             'meta_descp'    => $request->meta_descp,
             'created_at'    => Carbon::now(),
         ]);
+        Alert::toast('Success Toast','success');
         return back();
     }
 

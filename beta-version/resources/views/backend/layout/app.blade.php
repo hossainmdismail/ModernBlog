@@ -48,7 +48,8 @@
 
 <!-- app JavaScript -->
 <script src="{{ asset('backend_assets') }}/js/app.js"></script>
-</body>
 
-<!-- Mirrored from templates.iqonic.design/posdash/html/backend/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 May 2023 11:09:45 GMT -->
+
+@include('sweetalert::alert')
+</body>
 </html>
