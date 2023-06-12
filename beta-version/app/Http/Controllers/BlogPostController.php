@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog_Posts;
 use App\Models\Category;
+use App\Models\Post_Seo;
 use App\Models\Sub_Category;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use Photo;
 
 class BlogPostController extends Controller
@@ -45,14 +49,30 @@ class BlogPostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'category_id' => 'required|integer',
-            'sub_category_id' => 'required|integer',
-            'blog_type' => 'required|string',
-            'title' => 'required|string',
-            'content' => 'required',
-            'photo' => 'required|mimes:jpg,png,svg,jpeg,webp',
+            'category_id'       => 'required|integer',
+            'sub_category_id'   => 'required|integer',
+            'blog_type'         => 'required|string',
+            'title'             => 'required|string',
+            'content'           => 'required',
+            'photo'             => 'required|mimes:jpg,png,svg,jpeg,webp',
         ]);
         Photo::upload($request->photo ,'uploads/blog','BLOG',['1200','900']);
+
+        Blog_Posts::insert([
+            'user_id' => Auth::user()->id,
+            'category_id' => $request->category_id,
+            'sub_category_id' => $request->sub_category_id,
+            'premium' => $request->blog_type,
+            'title' => $request->title,
+            'photo' => Photo::$name,
+            'content' => $request->content,
+            'created_at' => Carbon::now(),
+        ]);
+        // Post_Seo::insert([
+        //     ''
+        // ]);
+        Alert::toast('Successfully Added','success');
+        return back();
     }
 
     /**

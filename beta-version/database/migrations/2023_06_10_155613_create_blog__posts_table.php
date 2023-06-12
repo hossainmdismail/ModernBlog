@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('photo');
             $table->longText('content');
-            $table->integer('views');
+            $table->integer('views')->default(0);
             $table->enum('premium',['free','premium'])->default('free');
             $table->integer('status')->default(1);
             $table->timestamps();
