@@ -16,7 +16,7 @@
                         <div class="card-body">
 
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Category Id *</label>
                                             <select name="category_id" class="selectpicker form-control @error('category_id') is-invalid @enderror" data-style="py-0">
@@ -28,7 +28,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Sub Category Id *</label>
                                             <select name="sub_category_id" class="selectpicker form-control @error('sub_category_id') is-invalid @enderror" data-style="py-0">
@@ -40,14 +40,14 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Photo</label>
                                             <input type="file" class="form-control image-file @error('photo') is-invalid @enderror" name="photo" accept="image/*">
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Blog Type *</label>
                                             <select name="blog_type" class="selectpicker form-control @error('blog_type') is-invalid @enderror" data-style="py-0">
@@ -67,14 +67,14 @@
                                     </div>
 
                                     <hr class="">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Meta Title *</label>
                                             <input type="text" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" placeholder="Meta title" value="{{ old('meta_title') }}">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Meta Tags *</label>
                                             <input type="text" name="meta_tags" class="form-control @error('meta_tags') is-invalid @enderror" placeholder="Meta tags" value="{{ old('meta_tags') }}">
@@ -84,7 +84,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Meta Descriptions *</label>
-                                            <input type="text" name="meta_descp" class="form-control @error('meta_descp') is-invalid @enderror" placeholder="Meta descriptions" value="{{ old('meta_descp') }}">
+                                            {{-- <input type="text" name="meta_descp"   > --}}
+                                            <textarea name="meta_descp" class="form-control @error('meta_descp') is-invalid @enderror" id="" cols="30" rows="2" placeholder="Meta descriptions">{{ old('meta_descp') }}</textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
