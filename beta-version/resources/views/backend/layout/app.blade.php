@@ -2,10 +2,10 @@
 <!doctype html>
 <html lang="en">
 
-<!-- Mirrored from templates.iqonic.design/posdash/html/backend/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 May 2023 11:09:10 GMT -->
 <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="csrf-token" content="{{ csrf_token() }}">
       <title>POS Dash | Responsive Bootstrap 4 Admin Dashboard Template</title>
 
       <!-- Favicon -->
@@ -50,6 +50,7 @@
 
 <!-- app JavaScript -->
 <script src="{{ asset('backend_assets') }}/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 @include('sweetalert::alert')
 @yield('script')

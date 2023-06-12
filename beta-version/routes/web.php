@@ -44,4 +44,5 @@ Route::get('/', [frontendController::class, 'home'])->name('home');
 Route::get('/about', [frontendController::class, 'about'])->name('about');
 Route::get('/contact', [frontendController::class, 'contact'])->name('contact');
 
-
+//========== Ajax ==========//
+Route::post('/getsubcat', [BlogPostController::class, 'getsubcat']);

@@ -43,20 +43,34 @@ class BlogPostController extends Controller
         ]);
     }
 
+     // ajax url getsubcat
+     function getsubcat(Request $request){
+
+        $subcategorys = Sub_Category::where('category_id', $request->category_id)->get();
+
+        $str = '<option value="">-- Select Sub Cateegory --</option>';
+
+        foreach($subcategorys as $subcategory){
+            $str .= '<option value="'.$subcategory->id.'">'.$subcategory->name.'</option>';
+        }
+
+        echo $str;
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
 
-        // $request->validate([
-        //     'category_id'       => 'required|integer',
-        //     'sub_category_id'   => 'required|integer',
-        //     'blog_type'         => 'required|string',
-        //     'title'             => 'required|string',
-        //     'content'           => 'required',
-        //     'photo'             => 'required|mimes:jpg,png,svg,jpeg,webp',
-        // ]);
+        $request->validate([
+            'category_id'       => 'required|integer',
+            'sub_category_id'   => 'required|integer',
+            'blog_type'         => 'required|string',
+            'title'             => 'required|string',
+            'content'           => 'required',
+            'photo'             => 'required|mimes:jpg,png,svg,jpeg,webp',
+        ]);
         Photo::upload($request->photo ,'uploads/blog','BLOG',['1200','900']);
 
         Blog_Posts::insert([
@@ -72,8 +86,8 @@ class BlogPostController extends Controller
         // Post_Seo::insert([
         //     ''
         // ]);
-        // Alert::toast('Successfully Added','success');
-        // return back();
+        Alert::toast('Successfully Added','success');
+        return back();
     }
 
     /**

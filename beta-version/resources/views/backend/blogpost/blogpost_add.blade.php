@@ -19,7 +19,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Category Id *</label>
-                                            <select name="category_id" class="selectpicker form-control @error('category_id') is-invalid @enderror" data-style="py-0">
+                                            <select name="category_id" id="category_id" class="selectpicker form-control @error('category_id') is-invalid @enderror" data-style="py-0">
                                                 @foreach ($categorys as $category)
                                                     <option value="{{ $category->id }}" {{ old('category_id') == $category->id? 'selected':''}}>{{ $category->name }}</option>
                                                 @endforeach
@@ -31,10 +31,11 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Sub Category Id *</label>
-                                            <select name="sub_category_id" class="selectpicker form-control @error('sub_category_id') is-invalid @enderror" data-style="py-0">
-                                                @foreach ($subcategorys as $subcategory)
+                                            <select name="sub_category_id" id="sub_category_id" class="selectpicker form-control @error('sub_category_id') is-invalid @enderror" data-style="py-0">
+                                                <option ></option>
+                                                {{-- @foreach ($subcategorys as $subcategory)
                                                     <option value="{{ $subcategory->id }}" {{ old('sub_category_id') == $subcategory->id? 'selected':''}}>{{ $subcategory->name }}</option>
-                                                @endforeach
+                                                @endforeach --}}
 
                                             </select>
                                         </div>
@@ -81,6 +82,7 @@
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
+
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Meta Descriptions *</label>
@@ -122,6 +124,8 @@
 
 
 @section('script')
+
+{{-- =========== Summernote ============== --}}
     <script>
         $(document).ready(function() {
             $('#summernote').summernote({
@@ -129,4 +133,29 @@
             });
         });
     </script>
+
+{{-- =============== ajax ================= --}}
+<script>
+    $('#category_id').change(function(){
+        var category_id = $(this).val();
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            type:'POST',
+            url:'/getsubcat',
+            data:{'category_id':category_id},
+            success:function(data){
+                // alert(data);
+                const subcate = $('#sub_category_id').append(data);
+                console.log(subcate);
+            }
+        })
+    })
+</script>
+
 @endsection
