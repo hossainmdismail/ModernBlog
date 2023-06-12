@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8">
+            {{-- <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <div class="card card-block card-stretch card-height">
@@ -355,7 +355,7 @@
                         <div id="layout1-chart-5"></div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <!-- Page end  -->
     </div>
