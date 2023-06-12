@@ -15,6 +15,8 @@
       <link rel="stylesheet" href="{{ asset('backend_assets') }}/vendor/%40fortawesome/fontawesome-free/css/all.min.css">
       <link rel="stylesheet" href="{{ asset('backend_assets') }}/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
       <link rel="stylesheet" href="{{ asset('backend_assets') }}/vendor/remixicon/fonts/remixicon.css">  </head>
+      <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
   <body class="  ">
     <!-- loader Start -->
 
@@ -38,18 +40,18 @@
 <script src="{{ asset('backend_assets') }}/js/backend-bundle.min.js"></script>
 
 <!-- Table Treeview JavaScript -->
-<script src="{{ asset('backend_assets') }}/js/table-treeview.js"></script>
+{{-- <script src="{{ asset('backend_assets') }}/js/table-treeview.js"></script> --}}
 
 <!-- Chart Custom JavaScript -->
-<script src="{{ asset('backend_assets') }}/js/customizer.js"></script>
+{{-- <script src="{{ asset('backend_assets') }}/js/customizer.js"></script> --}}
 
 <!-- Chart Custom JavaScript -->
-<script async src="{{ asset('backend_assets') }}/js/chart-custom.js"></script>
+{{-- <script async src="{{ asset('backend_assets') }}/js/chart-custom.js"></script> --}}
 
 <!-- app JavaScript -->
 <script src="{{ asset('backend_assets') }}/js/app.js"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 @include('sweetalert::alert')
+@yield('script')
 </body>
 </html>

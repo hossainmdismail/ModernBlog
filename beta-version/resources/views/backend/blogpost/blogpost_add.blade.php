@@ -17,12 +17,6 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>User Id *</label>
-                                        <input type="hidden" name="name">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
                                         <label>Category Id *</label>
                                         <select name="category_id" class="selectpicker form-control @error('name') is-invalid @enderror" data-style="py-0">
                                             @foreach ($categorys as $category)
@@ -45,13 +39,6 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Title *</label>
-                                        <input type="text" name="title" class="form-control @error('name') is-invalid @enderror" placeholder="Title" value="{{ old('name') }}">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
                                         <label>Photo</label>
                                         <input type="file" class="form-control image-file @error('name') is-invalid @enderror" name="photo" accept="image/*">
                                     </div>
@@ -59,7 +46,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Content *</label>
+                                        <label>Blog Type *</label>
                                         <select name="content" class="selectpicker form-control @error('name') is-invalid @enderror" data-style="py-0">
                                             <option>Beauty</option>
                                             <option>Grocery</option>
@@ -67,12 +54,18 @@
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Premium *</label>
-                                        <input type="text" name="premium" class="form-control @error('name') is-invalid @enderror" placeholder="Premium" required>
+                                        <label>Title *</label>
+                                        <input type="text" name="title" class="form-control @error('name') is-invalid @enderror" placeholder="Title" value="{{ old('name') }}">
                                         <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label for="">Write Your Blog</label>
+                                    <div class="form-group">
+                                        <textarea id="summernote" name="blog" style="width:100%; height:10rem"></textarea>
                                     </div>
                                 </div>
 
@@ -90,4 +83,13 @@
 </div>
 <!-- Wrapper End-->
 
+@endsection
+
+
+@section('script')
+    <script>
+        $(document).ready(function() {
+        $('#summernote').summernote();
+        });
+    </script>
 @endsection
