@@ -48,15 +48,14 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
-
-        // $request->validate([
-        //     'category_id'       => 'required|integer',
-        //     'sub_category_id'   => 'required|integer',
-        //     'blog_type'         => 'required|string',
-        //     'title'             => 'required|string',
-        //     'content'           => 'required',
-        //     'photo'             => 'required|mimes:jpg,png,svg,jpeg,webp',
-        // ]);
+        $request->validate([
+            'category_id'       => 'required|integer',
+            'sub_category_id'   => 'required|integer',
+            'blog_type'         => 'required|string',
+            'title'             => 'required|string',
+            'content'           => 'required',
+            'photo'             => 'required|mimes:jpg,png,svg,jpeg,webp',
+        ]);
         Photo::upload($request->photo ,'uploads/blog','BLOG',['1200','900']);
 
         Blog_Posts::insert([
@@ -72,8 +71,8 @@ class BlogPostController extends Controller
         // Post_Seo::insert([
         //     ''
         // ]);
-        // Alert::toast('Successfully Added','success');
-        // return back();
+        Alert::toast('Successfully Added','success');
+        return back();
     }
 
     /**

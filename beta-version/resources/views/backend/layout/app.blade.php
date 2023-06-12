@@ -7,9 +7,8 @@
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>POS Dash | Responsive Bootstrap 4 Admin Dashboard Template</title>
-
       <!-- Favicon -->
-      <link rel="shortcut icon" href="https://templates.iqonic.design/posdash/html/assets/images/favicon.ico" />
+      <link rel="shortcut icon" href="{{ asset('settings/fav.png') }}" type="image/x-icon">
       <link rel="stylesheet" href="{{ asset('backend_assets') }}/css/backend-plugin.min.css">
       <link rel="stylesheet" href="{{ asset('backend_assets') }}/css/backende209.css?v=1.0.0">
       <link rel="stylesheet" href="{{ asset('backend_assets') }}/vendor/%40fortawesome/fontawesome-free/css/all.min.css">
