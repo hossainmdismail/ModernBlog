@@ -59,9 +59,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request, string $id)
     {
-
+        // print_r($request->all());
+        echo 'Show';
     }
 
     /**
@@ -69,7 +70,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        $categorys = Category::where('id', $id)->get();
+        $categorys = Category::where('id', $id)->first();
         return view('backend.category.category_edit', [
             'categorys'=>$categorys,
         ]);
@@ -78,19 +79,23 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,$id)
     {
-        print_r($request->all());
-        die();
+        $file = Category::find($request->id)->photo;
 
-        // Photo::upload($request->photo ,'uploads/Category','CAT',['500','500']);
-        // Category::find($request->id)->update([
-        //     'name'          => $request->name,
-        //     'photo'         => Photo::$name,
-        //     'meta_title'    => $request->meta_title,
-        //     'meta_tags'     => $request->meta_tags,
-        //     'meta_descp'    => $request->meta_descp,
-        // ]);
+        if (file_exists($request->photo)) {
+            Photo::delete('uploads/Category',$file); //Deleteing Photo
+            Photo::upload($request->photo ,'uploads/Category','CAT',['500','500']); //Upload new Photo
+        }
+
+        Category::find($request->id)->update([
+            'name'          => $request->name,
+            'photo'         => (file_exists($request->photo)?Photo::$name : $file), //ternary operator | replace or update photo
+            'meta_title'    => $request->meta_title,
+            'meta_tags'     => $request->meta_tags,
+            'meta_descp'    => $request->meta_descp,
+        ]);
+        return redirect()->route('category.index')->with('succ','Category Successfully Updated');
     }
 
     /**
@@ -98,6 +103,6 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        echo $id;
+        echo 'hi';
     }
 }
