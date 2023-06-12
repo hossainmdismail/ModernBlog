@@ -12,8 +12,9 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('subcategory.store') }}"  method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('subcategory.update',['subcategory' => $sub_cat->id]) }}"  method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -28,7 +29,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Sub Category Name *</label>
-                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Sub Category Name" value="{{ old('name') }}">
+                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Sub Category Name" value="{{ $sub_cat->name }}">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -43,21 +44,21 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Meta Title *</label>
-                                        <input type="text" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" placeholder="Meta Title" required>
+                                        <input type="text" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" placeholder="Meta Title" value="{{ $sub_cat->meta_title }}" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Meta Tage *</label>
-                                        <input type="text" name="meta_tags" class="form-control @error('meta_tags') is-invalid @enderror" placeholder="Meta Tage" required>
+                                        <input type="text" name="meta_tags" class="form-control @error('meta_tags') is-invalid @enderror" placeholder="Meta Tage" value="{{ $sub_cat->meta_tags }}" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Meta Description *</label>
-                                        <textarea name="meta_descp" class="form-control @error('meta_descp') is-invalid @enderror" placeholder="Meta Description" id="" cols="80" rows="4"></textarea>
+                                        <textarea name="meta_descp" class="form-control @error('meta_descp') is-invalid @enderror" placeholder="Meta Description" id="" cols="80" rows="4">{{ $sub_cat->meta_descp }}</textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>

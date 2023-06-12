@@ -17,9 +17,7 @@ class SubCategoryController extends Controller
     public function index()
     {
         $subcategorys = Sub_Category::all();
-        $data       = Sub_Category::where('status', 1)->get();
         return view('backend.subcategory.subcategory_list',[
-            'data' => $data,
             'subcategorys' => $subcategorys,
         ]);
     }
@@ -40,11 +38,6 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        // print_r(json_encode($request->all()));
-        // // echo $request->photo;
-        // die();
-        // dd($request);
-
         $request->validate([
             'category_id'   => 'required',
             'name'          => 'required',
@@ -73,16 +66,20 @@ class SubCategoryController extends Controller
     public function show(string $id)
     {
         //
+        echo 'show';
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         $categorys  = Category::all();
+        $subCategory = Sub_Category::find($id)->first();
         return view('backend.subcategory.subcategory_edit', [
             'categorys' => $categorys,
+            'sub_cat' => $subCategory,
         ]);
 
     }
@@ -90,16 +87,36 @@ class SubCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,$id)
     {
-        //
+        $file = Sub_Category::find($id)->photo; //Getting the name of photo
+        if (file_exists($request->photo)) {
+            Photo::delete('uploads/Subcategory',$file); //Deleteing Photo
+            Photo::upload($request->photo ,'uploads/Subcategory','CAT',['500','500']); //Upload new Photo
+        }
+
+        Sub_Category::find($id)->update([
+            'category_id'   =>$request->category_id,
+            'name'          => $request->name,
+            'photo'         => (file_exists($request->photo)?Photo::$name : $file), //ternary operator | replace or update photo
+            'meta_title'    => $request->meta_title,
+            'meta_tags'     => $request->meta_tags,
+            'meta_descp'    => $request->meta_descp,
+        ]);
+        return redirect()->route('subcategory.index')->with('succ','Category Successfully Updated');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+         //Deleting Photo
+         $file = Sub_Category::find($id)->photo;
+         Photo::delete('uploads/Subcategory',$file);
+
+         //Deleting Item
+         $data = Sub_Category::find($id)->delete();
+         return back()->with('succ', 'Item Deleted');
     }
 }

@@ -47,7 +47,7 @@
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
+                                    <img src="{{ asset('uploads/Subcategory/'.$subcategory->photo) }}" class="img-fluid rounded avatar-50 mr-3" alt="image">
                                     <div>
                                         Organic Cream
                                         <p class="mb-0"><small>This is test Product</small></p>
@@ -62,8 +62,14 @@
                                         href="#"><i class="ri-eye-line mr-0"></i></a>
                                     <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
                                         href="{{ route('subcategory.edit', $subcategory->id) }}"><i class="ri-pencil-line mr-0"></i></a>
-                                    <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                        href="#"><i class="ri-delete-bin-line mr-0"></i></a>
+
+                                    <form action="{{ route('subcategory.destroy', ['subcategory' => $subcategory->id]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="badge bg-warning border-0 mr-2">
+                                            <i class="ri-delete-bin-line mr-0"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>

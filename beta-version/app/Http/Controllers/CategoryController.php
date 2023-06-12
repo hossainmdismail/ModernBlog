@@ -16,9 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categorys = Category::all();
-        $data = Category::where('status', 1)->get();
         return view('backend.category.category_list',[
-            'data' => $data,
             'categorys' => $categorys,
         ]);
     }
@@ -63,7 +61,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, string $id)
+    public function show(Request $request)
     {
         // print_r($request->all());
         echo 'Show';
@@ -72,7 +70,7 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         $categorys = Category::where('id', $id)->first();
         return view('backend.category.category_edit', [
@@ -85,14 +83,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $file = Category::find($request->id)->photo;
+        $file = Category::find($id)->photo; //Getting the name of photo
 
         if (file_exists($request->photo)) {
             Photo::delete('uploads/Category',$file); //Deleteing Photo
             Photo::upload($request->photo ,'uploads/Category','CAT',['500','500']); //Upload new Photo
         }
 
-        Category::find($request->id)->update([
+        Category::find($id)->update([
             'name'          => $request->name,
             'photo'         => (file_exists($request->photo)?Photo::$name : $file), //ternary operator | replace or update photo
             'meta_title'    => $request->meta_title,
@@ -105,8 +103,14 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        echo 'hi';
+        //Deleting Photo
+        $file = Category::find($id)->photo;
+        Photo::delete('uploads/Category',$file);
+
+        //Deleting Item
+        $data = Category::find($id)->delete();
+        return back()->with('succ', 'Item Deleted');
     }
 }
