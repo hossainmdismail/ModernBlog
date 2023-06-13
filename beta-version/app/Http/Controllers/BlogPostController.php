@@ -54,7 +54,7 @@ class BlogPostController extends Controller
             $str .= '<option value="'.$subcategory->id.'">'.$subcategory->name.'</option>';
         }
 
-        echo 'hi';
+        echo $str;
     }
 
     /**
