@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\frontendController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -46,3 +47,10 @@ Route::get('/contact', [frontendController::class, 'contact'])->name('contact');
 
 //========== Ajax ==========//
 Route::post('/getsubcat', [BlogPostController::class, 'getsubcat']);
+
+
+//========== Setting ==========//
+Route::get('/site/setting', [SettingController::class, 'site_setting'])->name('site.setting');
+Route::post('/setting/store', [SettingController::class, 'setting_store'])->name('setting.store');
+Route::get('/social/link', [SettingController::class, 'social_link'])->name('social.link');
+Route::post('/social/icon', [SettingController::class, 'social_icon'])->name('social.icon');
