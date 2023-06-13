@@ -122,39 +122,38 @@
 @section('script')
 
 {{-- =========== Summernote ============== --}}
-    <script>
-        $(document).ready(function() {
-            $('#summernote').summernote({
-                height: 400
-            });
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 400
         });
-    </script>
-
+    });
+</script>
 {{-- =============== ajax ================= --}}
 <script>
-$(document).ready(function(){
-    $('#category_id').change(function(){
-        var category_id = $(this).val();
+    $(document).ready(function(){
+        $('#category_id').change(function(){
+            var category_id = $(this).val();
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
-        $.ajax({
-            type:'POST',
-            url:'/getsubcat',
-            data:{'category_id':category_id},
-            success:function(data){
-                // alert(data);
-                //  console.log(data);
-                $('#sub_category_id').html(data);
-                // console.log(subcate);
-            }
+            $.ajax({
+                type:'POST',
+                url:'/getsubcat',
+                data:{'category_id':category_id},
+                success:function(data){
+                    // alert(data);
+                    //  console.log(data);
+                    $('#sub_category_id').html(data);
+                    // console.log(subcate);
+                }
+            })
         })
-    })
-});
+    });
 </script>
 
 @endsection

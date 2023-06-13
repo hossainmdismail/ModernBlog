@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Post_Seo;
 use App\Models\Sub_Category;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,7 +63,6 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'category_id'       => 'required|integer',
             'sub_category_id'   => 'required|integer',
@@ -73,19 +73,25 @@ class BlogPostController extends Controller
         ]);
         Photo::upload($request->photo ,'uploads/blog','BLOG',['1200','900']);
 
-        Blog_Posts::insert([
-            'user_id' => Auth::user()->id,
-            'category_id' => $request->category_id,
-            'sub_category_id' => $request->sub_category_id,
-            'premium' => $request->blog_type,
-            'title' => $request->title,
-            'photo' => Photo::$name,
-            'content' => $request->content,
+        $post =  Blog_Posts::create([
+            'user_id'           => Auth::user()->id,
+            'category_id'       => $request->category_id,
+            'sub_category_id'   => $request->sub_category_id,
+            'premium'           => $request->blog_type,
+            'title'             => $request->title,
+            'photo'             => Photo::$name,
+            'content'           => $request->content,
+            'created_at'        => Carbon::now(),
+        ]);
+        Post_Seo::insert([
+            'post_id'   => $post->id,
+            'slugs'      => Str::slug($request->title),
+            'meta_title' => $request->meta_title,
+            'meta_tags' => $request->meta_tags,
+            'meta_descp' => $request->meta_descp,
             'created_at' => Carbon::now(),
         ]);
-        // Post_Seo::insert([
-        //     ''
-        // ]);
+
         Alert::toast('Successfully Added','success');
         return back();
     }
