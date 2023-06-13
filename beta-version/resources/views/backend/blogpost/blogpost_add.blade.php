@@ -122,13 +122,15 @@
 @section('script')
 
 {{-- =========== Summernote ============== --}}
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote({
-            height: 400
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                height: 400
+            });
+            // $('#summernote').summernote();
         });
-    });
-</script>
+    </script>
 {{-- =============== ajax ================= --}}
 <script>
     $(document).ready(function(){

@@ -99,9 +99,9 @@
                     </a>
                     <ul id="blogpost" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li class="">
-                                    <a href="{{ route('blogpost.index') }}">
-                                        <i class="las la-minus"></i><span>List Blog Post</span>
-                                    </a>
+                                <a href="{{ route('blogpost.index') }}">
+                                    <i class="las la-minus"></i><span>List Blog Post</span>
+                                </a>
                             </li>
                             <li class="">
                                     <a href="{{ route('blogpost.create') }}">
