@@ -6,7 +6,7 @@
 	<title>Katen - Minimal Blog & Magazine HTML Theme</title>
 	<meta name="description" content="Katen - Minimal Blog & Magazine HTML Theme">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="{{ asset('settings/fav.png') }}">
 
 	<!-- STYLES -->
 	<link rel="stylesheet" href="{{ asset('frontend_assets') }}/css/bootstrap.min.css" type="text/css" media="all">
@@ -62,7 +62,7 @@
 
 	<!-- logo -->
 	<div class="logo">
-		<img src="images/logo.svg" alt="Katen" />
+		<img src="{{ asset('settings/e-blogger-logo.png') }}" alt="Katen" />
 	</div>
 
 	<!-- menu -->
@@ -115,6 +115,13 @@
 
 
 @yield('footer_script')
+
+<script>
+
+
+
+
+</script>
 
 </body>
 

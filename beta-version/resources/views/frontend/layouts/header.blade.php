@@ -1,8 +1,34 @@
+<header class="header-top-pan">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-xl">
+            <!-- site logo -->
+            <span class="currentTimeDate">
+                <span id="currentDate" style="padding-right: 12px; border-right:1px solid #67799142"></span>
+                <span id="currentTime"></span>
+            </span>
+
+
+            <!-- header right section -->
+            <div class="header-right">
+                <!-- social icons -->
+                <ul class="social-icons list-unstyled list-inline mb-0">
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
 <header class="header-default">
     <nav class="navbar navbar-expand-lg">
         <div class="container-xl">
             <!-- site logo -->
-            <a class="navbar-brand" href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+            <a class="navbar-brand" style="width: 120px !important" href="index.html"><img src="{{ asset('settings/e-blogger-logo.png') }}" alt="logo" /></a>
 
             <div class="collapse navbar-collapse">
                 <!-- menus -->
@@ -35,15 +61,6 @@
 
             <!-- header right section -->
             <div class="header-right">
-                <!-- social icons -->
-                <ul class="social-icons list-unstyled list-inline mb-0">
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                </ul>
                 <!-- header buttons -->
                 <div class="header-buttons">
                     <button class="search icon-button">

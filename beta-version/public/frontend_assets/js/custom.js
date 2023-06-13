@@ -108,10 +108,10 @@ $(document).ready(function() {
       ]
     });
     // Custom carousel nav
-    $('.carousel-topNav-prev').click(function(){ 
+    $('.carousel-topNav-prev').click(function(){
       $('.post-carousel-twoCol').slick('slickPrev');
     } );
-    $('.carousel-topNav-next').click(function(){ 
+    $('.carousel-topNav-next').click(function(){
       $('.post-carousel-twoCol').slick('slickNext');
     } );
 
@@ -140,10 +140,10 @@ $(document).ready(function() {
       ]
     });
     // Custom carousel nav
-    $('.carousel-botNav-prev').click(function(){ 
+    $('.carousel-botNav-prev').click(function(){
       $('.post-carousel-widget').slick('slickPrev');
     } );
-    $('.carousel-botNav-next').click(function(){ 
+    $('.carousel-botNav-next').click(function(){
       $('.post-carousel-widget').slick('slickNext');
     } );
 
@@ -224,7 +224,7 @@ $(function(){
           $('.lds-dual-ring').removeClass("loading");
       }, 500);
     });
-    
+
     /*=========================================================================
             Social share toggle
     =========================================================================*/
@@ -256,3 +256,27 @@ $(function(){
     }
 
 });
+
+/*=========================================================================
+    Custome Design Maahi
+    =========================================================================*/
+
+
+    //date
+    var currentDateElement = $("#currentDate");
+    var currentDate = new Date();
+    var options = { month: 'long', day: 'numeric', year: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString('en-US', options);
+    currentDateElement.text(formattedDate);
+
+    //Time
+    var currentTimeElement = $("#currentTime");
+
+    function updateTime() {
+      var currentTime = new Date();
+      var formattedTime = currentTime.toLocaleTimeString();
+      currentTimeElement.text(formattedTime);
+    }
+    // Update the time every second
+    setInterval(updateTime, 1000);
+
