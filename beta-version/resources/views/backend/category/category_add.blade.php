@@ -35,12 +35,11 @@
                                         <select name="status" class="selectpicker form-control" data-style="py-0">
                                             <option>Beauty</option>
                                             <option>Grocery</option>
-
                                         </select>
                                     </div>
                                 </div> --}}
                                 <hr>
-
+                                
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Meta Title *</label>
