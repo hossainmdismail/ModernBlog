@@ -7,10 +7,9 @@
             <div class="col-lg-12">
                 <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                     <div>
-                        <h4 class="mb-3">Blog Post List</h4>
-
+                        <h4 class="mb-3">Members</h4>
                     </div>
-                    <a href="{{ route('blogpost.create') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Category</a>
+                    <a href="{{ route('category.create') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Member</a>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -24,20 +23,15 @@
                                     <label for="checkbox1" class="mb-0"></label>
                                 </div>
                             </th>
-                            <th>User Id</th>
-                            <th>Category Id</th>
-                            <th>Sub Category Id</th>
-                            <th>Title</th>
-                            <th>Photo</th>
-                            <th>Status</th>
-                            <th>Content</th>
-                            <th>Views</th>
-                            <th>Premium</th>
-                            <th>Action</th>
+                            {{-- <th>Photo</th> --}}
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Member</th>
+                            <th>Join</th>
                         </tr>
                     </thead>
                     <tbody class="ligth-body">
-                        @foreach ($blogposts as $blogpost)
+                         @foreach ($data as $datas)
                             <tr>
                                 <td>
                                     <div class="checkbox d-inline-block">
@@ -45,27 +39,25 @@
                                         <label for="checkbox2" class="mb-0"></label>
                                     </div>
                                 </td>
+                                <td>{{$datas->name}}</td>
                                 <td>
-                                    <div class="d-flex align-items-center">
-                                        <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
-                                        <div>
-                                            Organic Cream
-                                            <p class="mb-0"><small>This is test Product</small></p>
-                                        </div>
-                                    </div>
+                                    @php
+                                        if ($datas->role == 0) {
+                                            echo 'User';
+                                        }elseif ($datas->role == 1) {
+                                            echo 'Editor';
+                                        }elseif ($datas->role == 2) {
+                                            echo 'Manager';
+                                        }
+                                        elseif ($datas->role == 3) {
+                                            echo 'Admin';
+                                        }else {
+                                            echo 'Unknown';
+                                        }
+                                    @endphp
                                 </td>
-                                <td>CREM01</td>
-                                <td>Beauty</td>
-                                <td>
-                                    <div class="d-flex align-items-center list-action">
-                                        <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"
-                                            href="#"><i class="ri-eye-line mr-0"></i></a>
-                                        <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
-                                            href="{{ route('blogpost.edit', $blogpost->id) }}"><i class="ri-pencil-line mr-0"></i></a>
-                                        <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                            href="#"><i class="ri-delete-bin-line mr-0"></i></a>
-                                    </div>
-                                </td>
+                                <td>{{ $datas->post_type }}</td>
+                                <td>{{ $datas->created_at->diffForHumans() }}</td>
                             </tr>
                         @endforeach
                     </tbody>
