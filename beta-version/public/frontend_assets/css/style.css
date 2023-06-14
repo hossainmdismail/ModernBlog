@@ -2176,20 +2176,25 @@ footer .footer-inner .copyright {
 /*                      SEARCH POPUP
 /*=================================================================*/
 .search-popup {
-  background: white;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  z-index: 6;
-  opacity: 0;
-  visibility: hidden;
+    background: white;
+    position: fixed;
+    left: 20%;
+    top: 20%;
+    height: 60vh;
+    width: 60%;
+    z-index: 6;
+    opacity: 0;
+    visibility: hidden;
 }
 .search-popup.visible {
   opacity: 1;
   visibility: visible;
   animation: growOut 500ms ease-in-out forwards;
+}
+.login_logo{
+    width: 15%;
+    margin: 0 auto;
+    padding: 10px 0;
 }
 .search-popup .search-content {
   position: absolute;
