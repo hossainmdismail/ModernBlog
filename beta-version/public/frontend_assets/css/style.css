@@ -2357,6 +2357,19 @@ button:focus {
   box-shadow: none !important;
 }
 
+.nav_active {
+    background:linear-gradient(to right, #0095cf 0%, #82d3e8 57%, #0095cf 100%);
+    border-radius: 14px;
+    color: white !important;
+    background-size: 200% auto;
+}
+.nav_active:hover {
+    border-radius: 14px;
+    color: white !important;
+    background: -webkit-linear-gradient(bottom, #82d3e8 0%, #006ecf 51%, #82d3e8 100%);
+    background: linear-gradient(to top, #82d3e8 0%, #006ecf 51%, #82d3e8 100%);
+    background-size: auto 200%;
+}
 .btn {
   color: #FFF;
   border: 0;

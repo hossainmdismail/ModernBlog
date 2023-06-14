@@ -10,7 +10,41 @@
 
             <div class="col-lg-8">
 
-                <!-- featured post large -->
+                <div class="header-carousel-widget">
+                    <!-- featured post large -->
+                    <div class="post featured-post-lg">
+                        <div class="details clearfix">
+                            <a href="category.html" class="category-badge">Inspiration</a>
+                            <h2 class="post-title"><a href="blog-single.html">5 Easy Ways You Can Turn Future Into Success</a></h2>
+                            <ul class="meta list-inline mb-0">
+                                <li class="list-inline-item"><a href="#">Katen Doe</a></li>
+                                <li class="list-inline-item">29 March 2021</li>
+                            </ul>
+                        </div>
+                        <a href="blog-single.html">
+                            <div class="thumb rounded">
+                                <div class="inner data-bg-image" data-bg-image="images/posts/featured-lg.jpg"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- featured post large -->
+                    <div class="post featured-post-lg">
+                        <div class="details clearfix">
+                            <a href="category.html" class="category-badge">Inspiration</a>
+                            <h2 class="post-title"><a href="blog-single.html">10 Ways To Immediately Start Selling Furniture</a></h2>
+                            <ul class="meta list-inline mb-0">
+                                <li class="list-inline-item"><a href="#">Katen Doe</a></li>
+                                <li class="list-inline-item">29 March 2021</li>
+                            </ul>
+                        </div>
+                        <a href="blog-single.html">
+                            <div class="thumb rounded">
+                                <div class="inner data-bg-image" data-bg-image="images/posts/featured-lg.jpg"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {{-- <!-- featured post large -->
                 <div class="post featured-post-lg">
                     <div class="details clearfix">
                         <a href="category.html" class="category-badge">Inspiration</a>
@@ -25,7 +59,7 @@
                             <div class="inner data-bg-image" data-bg-image="images/posts/featured-lg.jpg"></div>
                         </div>
                     </a>
-                </div>
+                </div> --}}
 
             </div>
 
@@ -197,7 +231,7 @@
                 <!-- section header -->
                 <div class="section-header">
                     <h3 class="section-title">Editor’s Pick</h3>
-                    <img src="images/wave.svg" class="wave" alt="wave" />
+                    <img src="{{ asset('settings/wave.svg') }}" class="wave" alt="wave" />
                 </div>
 
                 <div class="padding-30 rounded bordered">

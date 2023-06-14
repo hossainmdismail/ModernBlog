@@ -139,6 +139,27 @@ $(document).ready(function() {
         }
       ]
     });
+    // header carousel
+    $('.header-carousel-widget').slick({
+        dots: false,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay:true,
+        autoplayTimeout:1000,
+        autoplayHoverPause:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+      });
     // Custom carousel nav
     $('.carousel-botNav-prev').click(function(){
       $('.post-carousel-widget').slick('slickPrev');
