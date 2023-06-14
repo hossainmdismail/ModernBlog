@@ -16,9 +16,11 @@ class CheckRoleMiddleware
     public function handle(Request $request, Closure $next, $role)
     {
         $user = $request->user();
-        if ($user && $user->role == $role) {
+        if ($user && $user->role != 0) {
             return $next($request);
+        }else {
+            return redirect('/');
         }
-        abort(403, 'Unauthorized');
+        // abort(403, 'Unauthorized');
     }
 }

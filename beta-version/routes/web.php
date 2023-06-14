@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\frontendController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Members;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Auth;
@@ -26,17 +27,18 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 
 
 //========= BackEnd Controllers =========//
 Route::group(['middleware' => ['checkRole:5','auth']], function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resources([
         'category'      => CategoryController::class,
         'subcategory'   => SubCategoryController::class,
         'blogpost'      => BlogPostController::class,
+        'member'        => Members::class,
     ]);
 });
 
