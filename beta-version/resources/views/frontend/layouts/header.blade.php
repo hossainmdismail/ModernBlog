@@ -63,12 +63,15 @@
             <div class="header-right">
                 <!-- header buttons -->
                 <div class="header-buttons">
+                    @if (Auth::check())
+                    <a href="#">
+                        <img style="width: 30px; height:30px" src="{{ asset('uploads/blog/BLOG1667195-130623.png') }}" alt="">
+                    </a>
+                    @else
                     <button class="search icon-button">
-                        <i class="icon-magnifier"></i>
+                        Join Premium
                     </button>
-                    <button class="burger-menu icon-button">
-                        <span class="burger-icon"></span>
-                    </button>
+                    @endif
                 </div>
             </div>
         </div>

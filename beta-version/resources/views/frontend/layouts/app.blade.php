@@ -51,22 +51,23 @@
                 <h4 class="mb-3 mt-0">User Login</h4>
             </div>
             <!-- form -->
-            <form class=" search-form">
+            <form action="{{ route('user.login') }}" method="POST" class=" search-form">
+                @csrf
                 <div class="my-3">
                     <label class="form-label" for="">Email </label>
-                    <input type="email" name="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
+                    <input type="email" name="email" placeholder="example@yahoo.com" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
                 </div>
                 <div class="my-3">
                     <label class="form-label" for="">Password</label>
                     <input type="password" name="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}">
                 </div>
                 <div class="my-3">
-                    <input type="checkbox" name="checkbox">
-                    <label class="form-label" for="">Password</label>
+                    <input type="checkbox" id="remember" name="remember">
+                    <label class="form-label" for="remember">Remember</label>
                 </div>
                 <button class="btn btn-default btn-lg" type="submit">Login</button>
                 <div class="my-3 m-auto text-center">
-                    <span>Don't have a account -<a href="">Regristration</a></span>
+                    <span>Don't have a account -<a href="#">Regristration</a></span>
                 </div>
             </form>
         </div>

@@ -236,30 +236,48 @@
 
                 <div class="padding-30 rounded bordered">
                     <div class="row gy-5">
+                        {{-- item big --}}
                         <div class="col-sm-6">
                             <!-- post -->
                             <div class="post">
                                 <div class="thumb rounded">
                                     <a href="category.html" class="category-badge position-absolute">Lifestyle</a>
-                                    <span class="post-format">
+                                    {{-- <span class="post-format">
                                         <i class="icon-picture"></i>
-                                    </span>
+                                    </span> --}}
                                     <a href="blog-single.html">
                                         <div class="inner">
-                                            <img src="images/posts/editor-lg.jpg" alt="post-title" />
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/editor-lg.jpg" alt="post-title" />
                                         </div>
                                     </a>
                                 </div>
-                                <ul class="meta list-inline mt-4 mb-0">
-                                    <li class="list-inline-item"><a href="#"><img src="images/other/author-sm.png" class="author" alt="author"/>Katen Doe</a></li>
+                                <ul class="meta list-inline mt-1 mb-0">
                                     <li class="list-inline-item">29 March 2021</li>
                                 </ul>
-                                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">15 Unheard Ways To Achieve Greater Walker</a></h5>
-                                <p class="excerpt mb-0">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy</p>
+                                <h5 class="post-title mb-3 mt-1"><a href="blog-single.html">15 Unheard Ways To Achieve Greater Walker</a></h5>
                             </div>
                         </div>
+                        {{-- item big --}}
                         <div class="col-sm-6">
                             <!-- post -->
+                            <div class="post">
+                                <div class="thumb rounded">
+                                    <a href="category.html" class="category-badge position-absolute">Lifestyle</a>
+                                    {{-- <span class="post-format">
+                                        <i class="icon-picture"></i>
+                                    </span> --}}
+                                    <a href="blog-single.html">
+                                        <div class="inner">
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/editor-lg.jpg" alt="post-title" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <ul class="meta list-inline mt-1 mb-0">
+                                    <li class="list-inline-item">29 March 2021</li>
+                                </ul>
+                                <h5 class="post-title mb-3 mt-1"><a href="blog-single.html">15 Unheard Ways To Achieve Greater Walker</a></h5>
+                            </div>
+                            {{-- <!-- post -->
                             <div class="post post-list-sm square">
                                 <div class="thumb rounded">
                                     <a href="blog-single.html">
@@ -322,6 +340,108 @@
                                         <li class="list-inline-item">29 March 2021</li>
                                     </ul>
                                 </div>
+                            </div> --}}
+                        </div>
+                        {{-- item List --}}
+                        <div class="col-sm-6">
+                            <!-- post -->
+                            <div class="post post-list-sm square">
+                                <div class="thumb rounded">
+                                    <a href="blog-single.html">
+                                        <div class="inner">
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/editor-sm-1.jpg" alt="post-title" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details clearfix">
+                                    <h6 class="post-title my-0"><a href="blog-single.html">3 Easy Ways To Make Your iPhone Faster</a></h6>
+                                    <ul class="meta list-inline mt-1 mb-0">
+                                        <li class="list-inline-item">29 March 2021</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- post -->
+                            <div class="post post-list-sm square">
+                                <div class="thumb rounded">
+                                    <a href="blog-single.html">
+                                        <div class="inner">
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/editor-sm-2.jpg" alt="post-title" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details clearfix">
+                                    <h6 class="post-title my-0"><a href="blog-single.html">An Incredibly Easy Method That Works For All</a></h6>
+                                    <ul class="meta list-inline mt-1 mb-0">
+                                        <li class="list-inline-item">29 March 2021</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- post -->
+                            <div class="post post-list-sm square">
+                                <div class="thumb rounded">
+                                    <a href="blog-single.html">
+                                        <div class="inner">
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/editor-sm-3.jpg" alt="post-title" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details clearfix">
+                                    <h6 class="post-title my-0"><a href="blog-single.html">10 Ways To Immediately Start Selling Furniture</a></h6>
+                                    <ul class="meta list-inline mt-1 mb-0">
+                                        <li class="list-inline-item">29 March 2021</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- item List --}}
+                        <div class="col-sm-6">
+                            <!-- post -->
+                            <div class="post post-list-sm square">
+                                <div class="thumb rounded">
+                                    <a href="blog-single.html">
+                                        <div class="inner">
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/editor-sm-1.jpg" alt="post-title" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details clearfix">
+                                    <h6 class="post-title my-0"><a href="blog-single.html">3 Easy Ways To Make Your iPhone Faster</a></h6>
+                                    <ul class="meta list-inline mt-1 mb-0">
+                                        <li class="list-inline-item">29 March 2021</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- post -->
+                            <div class="post post-list-sm square">
+                                <div class="thumb rounded">
+                                    <a href="blog-single.html">
+                                        <div class="inner">
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/editor-sm-2.jpg" alt="post-title" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details clearfix">
+                                    <h6 class="post-title my-0"><a href="blog-single.html">An Incredibly Easy Method That Works For All</a></h6>
+                                    <ul class="meta list-inline mt-1 mb-0">
+                                        <li class="list-inline-item">29 March 2021</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- post -->
+                            <div class="post post-list-sm square">
+                                <div class="thumb rounded">
+                                    <a href="blog-single.html">
+                                        <div class="inner">
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/editor-sm-3.jpg" alt="post-title" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details clearfix">
+                                    <h6 class="post-title my-0"><a href="blog-single.html">10 Ways To Immediately Start Selling Furniture</a></h6>
+                                    <ul class="meta list-inline mt-1 mb-0">
+                                        <li class="list-inline-item">29 March 2021</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -347,33 +467,31 @@
 
                 <div class="padding-30 rounded bordered">
                     <div class="row gy-5">
-                        <div class="col-sm-6">
+                        <div class="col-12">
                             <!-- post large -->
                             <div class="post">
                                 <div class="thumb rounded">
-                                    <a href="category.html" class="category-badge position-absolute">Culture</a>
-                                    <span class="post-format">
+                                    <a href="category.html" class="category-badge position-absolute">Ranking</a>
+                                    {{-- <span class="post-format">
                                         <i class="icon-picture"></i>
-                                    </span>
+                                    </span> --}}
                                     <a href="blog-single.html">
                                         <div class="inner">
-                                            <img src="images/posts/trending-lg-1.jpg" alt="post-title" />
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/trending-lg-1.jpg" alt="post-title" />
                                         </div>
                                     </a>
                                 </div>
-                                <ul class="meta list-inline mt-4 mb-0">
-                                    <li class="list-inline-item"><a href="#"><img src="images/other/author-sm.png" class="author" alt="author"/>Katen Doe</a></li>
+                                <ul class="meta list-inline mt-1 mb-0">
                                     <li class="list-inline-item">29 March 2021</li>
                                 </ul>
-                                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">Facts About Business That Will Help You Success</a></h5>
-                                <p class="excerpt mb-0">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy</p>
+                                <h5 class="post-title mb-3 mt-1"><a href="blog-single.html">15 Unheard Ways To Achieve Greater Walker</a></h5>
                             </div>
                             <!-- post -->
                             <div class="post post-list-sm square before-seperator">
                                 <div class="thumb rounded">
                                     <a href="blog-single.html">
                                         <div class="inner">
-                                            <img src="images/posts/trending-sm-1.jpg" alt="post-title" />
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/trending-sm-1.jpg" alt="post-title" />
                                         </div>
                                     </a>
                                 </div>
@@ -389,7 +507,7 @@
                                 <div class="thumb rounded">
                                     <a href="blog-single.html">
                                         <div class="inner">
-                                            <img src="images/posts/trending-sm-2.jpg" alt="post-title" />
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/trending-sm-2.jpg" alt="post-title" />
                                         </div>
                                     </a>
                                 </div>
@@ -400,39 +518,17 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <!-- post large -->
-                            <div class="post">
-                                <div class="thumb rounded">
-                                    <a href="category.html" class="category-badge position-absolute">Inspiration</a>
-                                    <span class="post-format">
-                                        <i class="icon-earphones"></i>
-                                    </span>
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="images/posts/trending-lg-2.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <ul class="meta list-inline mt-4 mb-0">
-                                    <li class="list-inline-item"><a href="#"><img src="images/other/author-sm.png" class="author" alt="author"/>Katen Doe</a></li>
-                                    <li class="list-inline-item">29 March 2021</li>
-                                </ul>
-                                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">5 Easy Ways You Can Turn Future Into Success</a></h5>
-                                <p class="excerpt mb-0">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy</p>
-                            </div>
                             <!-- post -->
                             <div class="post post-list-sm square before-seperator">
                                 <div class="thumb rounded">
                                     <a href="blog-single.html">
                                         <div class="inner">
-                                            <img src="images/posts/trending-sm-3.jpg" alt="post-title" />
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/trending-sm-1.jpg" alt="post-title" />
                                         </div>
                                     </a>
                                 </div>
                                 <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">Here Are 8 Ways To Success Faster</a></h6>
+                                    <h6 class="post-title my-0"><a href="blog-single.html">3 Easy Ways To Make Your iPhone Faster</a></h6>
                                     <ul class="meta list-inline mt-1 mb-0">
                                         <li class="list-inline-item">29 March 2021</li>
                                     </ul>
@@ -443,18 +539,52 @@
                                 <div class="thumb rounded">
                                     <a href="blog-single.html">
                                         <div class="inner">
-                                            <img src="images/posts/trending-sm-4.jpg" alt="post-title" />
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/trending-sm-2.jpg" alt="post-title" />
                                         </div>
                                     </a>
                                 </div>
                                 <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">Master The Art Of Nature With These 7 Tips</a></h6>
+                                    <h6 class="post-title my-0"><a href="blog-single.html">An Incredibly Easy Method That Works For All</a></h6>
                                     <ul class="meta list-inline mt-1 mb-0">
                                         <li class="list-inline-item">29 March 2021</li>
                                     </ul>
                                 </div>
                             </div>
+                            <!-- post -->
+                            <div class="post post-list-sm square before-seperator">
+                                <div class="thumb rounded">
+                                    <a href="blog-single.html">
+                                        <div class="inner">
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/trending-sm-1.jpg" alt="post-title" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details clearfix">
+                                    <h6 class="post-title my-0"><a href="blog-single.html">3 Easy Ways To Make Your iPhone Faster</a></h6>
+                                    <ul class="meta list-inline mt-1 mb-0">
+                                        <li class="list-inline-item">29 March 2021</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- post -->
+                            <div class="post post-list-sm square before-seperator">
+                                <div class="thumb rounded">
+                                    <a href="blog-single.html">
+                                        <div class="inner">
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/trending-sm-2.jpg" alt="post-title" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="details clearfix">
+                                    <h6 class="post-title my-0"><a href="blog-single.html">An Incredibly Easy Method That Works For All</a></h6>
+                                    <ul class="meta list-inline mt-1 mb-0">
+                                        <li class="list-inline-item">29 March 2021</li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
 
@@ -717,17 +847,17 @@
                     <!-- widget popular posts -->
                     <div class="widget rounded">
                         <div class="widget-header text-left">
-                            <h3 class="widget-title">Popular Posts</h3>
+                            <h3 class="widget-title">Premium Posts</h3>
                             <img src="images/wave.svg" class="wave" alt="wave" />
                         </div>
                         <div class="widget-content">
                             <!-- post -->
                             <div class="post post-list-sm circle">
                                 <div class="thumb circle">
-                                    <span class="number">1</span>
+                                    <span class="number">$</span>
                                     <a href="blog-single.html">
                                         <div class="inner">
-                                            <img src="images/posts/tabs-1.jpg" alt="post-title" />
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/tabs-1.jpg" alt="post-title" />
                                         </div>
                                     </a>
                                 </div>
@@ -741,10 +871,10 @@
                             <!-- post -->
                             <div class="post post-list-sm circle">
                                 <div class="thumb circle">
-                                    <span class="number">2</span>
+                                    <span class="number">$</span>
                                     <a href="blog-single.html">
                                         <div class="inner">
-                                            <img src="images/posts/tabs-2.jpg" alt="post-title" />
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/tabs-2.jpg" alt="post-title" />
                                         </div>
                                     </a>
                                 </div>
@@ -758,10 +888,10 @@
                             <!-- post -->
                             <div class="post post-list-sm circle">
                                 <div class="thumb circle">
-                                    <span class="number">3</span>
+                                    <span class="number">$</span>
                                     <a href="blog-single.html">
                                         <div class="inner">
-                                            <img src="images/posts/tabs-3.jpg" alt="post-title" />
+                                            <img src="{{ asset('frontend_assets/images') }}/posts/tabs-3.jpg" alt="post-title" />
                                         </div>
                                     </a>
                                 </div>
