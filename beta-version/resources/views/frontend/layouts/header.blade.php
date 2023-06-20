@@ -68,9 +68,9 @@
                         <img style="width: 30px; height:30px" src="{{ asset('uploads/blog/BLOG1667195-130623.png') }}" alt="">
                     </a>
                     @else
-                    <button class="search icon-button">
+                    <a href="{{ route('subscription') }}" class="search icon-button">
                         Join Premium
-                    </button>
+                    </a>
                     @endif
                 </div>
             </div>

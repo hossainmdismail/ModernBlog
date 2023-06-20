@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogPostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\frontendController;
+use App\Http\Controllers\FrontPlanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Members;
 use App\Http\Controllers\PlansController;
@@ -61,3 +62,8 @@ Route::get('/site/setting', [SettingController::class, 'site_setting'])->name('s
 Route::post('/setting/store', [SettingController::class, 'setting_store'])->name('setting.store');
 Route::get('/social/link', [SettingController::class, 'social_link'])->name('social.link');
 Route::post('/social/icon', [SettingController::class, 'social_icon'])->name('social.icon');
+
+// ============ Subscription ============//
+Route::get('/subscription', [FrontPlanController::class, 'subscription'])->name('subscription');
+Route::get('/subscription/pay', [FrontPlanController::class, 'subscription_pay'])->name('subscription.pay');
+

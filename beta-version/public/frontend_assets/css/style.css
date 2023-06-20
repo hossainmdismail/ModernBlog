@@ -2173,6 +2173,42 @@ footer .footer-inner .copyright {
 }
 
 /*=================================================================*/
+/*                      subscrtption
+/*=================================================================*/
+
+.sub_main{
+    border: 1px solid #0095cf;
+    border-radius: 5%;
+    /* background-color: #0095cf; */
+}
+.sub_btn{
+    padding: 10px 40px;
+    border: 1px solid #8F9BAD;
+    border-radius: 15px;
+    background-color: #0095cf;
+
+    display: flex;
+    justify-content: center;
+}
+.sub_btn a{
+    color: #fff;
+}
+
+.sub_select{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub_select{
+    border: 1px solid #0095cf;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/*=================================================================*/
+/*                      subscrtption
+/*=================================================================*/
+/*=================================================================*/
 /*                      SEARCH POPUP
 /*=================================================================*/
 .search-popup {
