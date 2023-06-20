@@ -43,7 +43,7 @@ class PlansController extends Controller
         ]);
 
         $plans = Plans::create($validate);
-        $plans->created_at = Carbon::now();
+        $plans->created_at = Carbon::now()->addMonths(3);
         $plans->save();
 
 

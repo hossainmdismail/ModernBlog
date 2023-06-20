@@ -3,8 +3,8 @@
 @section('content')
      <div class="content-page">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8 ">
                     <div class="card">
                         <div class="card-header text-center">
                         <h4>Update Plans</h4>
