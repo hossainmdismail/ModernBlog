@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\frontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Members;
+use App\Http\Controllers\PlansController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,7 @@ Route::group(['middleware' => ['checkRole:5','auth']], function () {
         'subcategory'   => SubCategoryController::class,
         'blogpost'      => BlogPostController::class,
         'member'        => Members::class,
+        'plans'         => PlansController::class,
     ]);
 });
 
