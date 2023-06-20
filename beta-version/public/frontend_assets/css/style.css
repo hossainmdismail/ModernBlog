@@ -2177,32 +2177,34 @@ footer .footer-inner .copyright {
 /*=================================================================*/
 
 .sub_main{
-    border: 1px solid #0095cf;
-    border-radius: 5%;
-    /* background-color: #0095cf; */
+    border: 1px solid #e1e1e1;
+    border-radius: 20px;
+    box-shadow: 6px 6px 10px -9px;
+    margin: 10px 0;
+
 }
 .sub_btn{
-    padding: 10px 40px;
-    border: 1px solid #8F9BAD;
-    border-radius: 15px;
-    background-color: #0095cf;
-
     display: flex;
     justify-content: center;
 }
+
 .sub_btn a{
-    color: #fff;
+    /* padding: 7px 35px;
+    border-radius: 15px;
+    background-color: #0095cf;
+    color: #fff; */
+    width: 100%;
+    text-align: center;
 }
 
-.sub_select{
-    display: flex;
-    justify-content: space-between;
-}
 
 .sub_select{
-    border: 1px solid #0095cf;
+    border: 1px solid #cfcfcf;
     border-radius: 15px;
     padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /*=================================================================*/
@@ -2519,6 +2521,7 @@ button:focus {
 }
 .icon-button:hover {
   background-position: bottom center;
+  color: white;
 }
 
 .btn-instagram {

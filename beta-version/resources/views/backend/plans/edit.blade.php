@@ -50,13 +50,14 @@
 
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Update</button>
-                                <form action="{{ route('plans.destroy',$data->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger mr-2">Delete Plan</button>
 
-                                </form>
                                 {{-- <a href="{{ route('plans.destroy',$data->id) }}" class="btn btn-danger mr-2">Delete Plans</a> --}}
+                            </form>
+                            <form action="{{ route('plans.destroy',$data->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger mr-2 mt-3">Delete Plan</button>
+
                             </form>
                         </div>
                     </div>

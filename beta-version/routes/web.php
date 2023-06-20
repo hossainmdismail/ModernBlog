@@ -65,5 +65,6 @@ Route::post('/social/icon', [SettingController::class, 'social_icon'])->name('so
 
 // ============ Subscription ============//
 Route::get('/subscription', [FrontPlanController::class, 'subscription'])->name('subscription');
-Route::get('/subscription/pay', [FrontPlanController::class, 'subscription_pay'])->name('subscription.pay');
+Route::get('/subscription/pay/{id}', [FrontPlanController::class, 'subscription_pay'])->name('subscription.pay');
+Route::post('/subscription/checkout', [FrontPlanController::class, 'subscription_checkout'])->name('subscription.checkout');
 
