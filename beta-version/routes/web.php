@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Members;
 use App\Http\Controllers\PlansController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -68,3 +69,9 @@ Route::get('/subscription', [FrontPlanController::class, 'subscription'])->name(
 Route::get('/subscription/pay/{id}', [FrontPlanController::class, 'subscription_pay'])->name('subscription.pay');
 Route::post('/subscription/checkout', [FrontPlanController::class, 'subscription_checkout'])->name('subscription.checkout');
 
+//============== Stripe Payments =============//
+
+Route::controller(StripePaymentController::class)->group(function(){
+    Route::get('stripe', 'stripe')->name('stripe.link');
+    Route::post('stripe', 'stripePost')->name('stripe.post');
+});

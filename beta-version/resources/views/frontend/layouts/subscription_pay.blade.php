@@ -29,23 +29,27 @@
             <div class="sub_info">
                 <div class="my-3">
                     <label for="" class="form-label">Name</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
                 </div>
                 <div class="my-3">
                     <label for="" class="form-label">Phone</label>
-                    <input type="number" name="number" class="form-control">
+                    <input type="number" name="number" class="form-control @error('number') is-invalid @enderror">
                 </div>
                 <div class="my-3">
                     <label for="" class="form-label">Address</label>
-                    <input type="address" name="address" class="form-control">
+                    <input type="address" name="address" class="form-control @error('address') is-invalid @enderror">
+                </div>
+                <div class="my-3">
+                    <label for="" class="form-label">Country</label>
+                    <input type="address" name="country" class="form-control @error('country') is-invalid @enderror">
                 </div>
                 <div class="my-3">
                     <label for="" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control">
+                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror">
                 </div>
                 <div class="my-3">
                     <label for="" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control">
+                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
                 </div>
 
                 <div class="my-4 text-right">
