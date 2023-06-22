@@ -41,4 +41,10 @@ class frontendController extends Controller
         // ]);
 
     }
+
+        //========== user profile =============//
+        function user_profile(){
+            return view('frontend.profile');
+        }
+
 }

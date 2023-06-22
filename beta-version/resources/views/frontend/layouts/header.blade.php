@@ -64,9 +64,16 @@
                 <!-- header buttons -->
                 <div class="header-buttons">
                     @if (Auth::check())
-                    <a href="#">
-                        <img style="width: 30px; height:30px" src="{{ asset('uploads/blog/BLOG1667195-130623.png') }}" alt="">
-                    </a>
+                    <li class="nav-item dropdown" style="list-style: none">
+                        <a href="#">
+                            <img style="width: 50px" src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" alt="">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('user.profile') }}">Profile</a></li>
+                            <li><a class="dropdown-item" href="blog-single.html">Logout</a></li>
+                        </ul>
+                    </li>
+
                     @else
                     <a href="{{ route('subscription') }}" class="search icon-button">
                         Join Premium

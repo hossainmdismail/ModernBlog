@@ -69,9 +69,16 @@ Route::get('/subscription', [FrontPlanController::class, 'subscription'])->name(
 Route::get('/subscription/pay/{id}', [FrontPlanController::class, 'subscription_pay'])->name('subscription.pay');
 Route::post('/subscription/checkout', [FrontPlanController::class, 'subscription_checkout'])->name('subscription.checkout');
 
+<<<<<<< Updated upstream
 //============== Stripe Payments =============//
 
 Route::controller(StripePaymentController::class)->group(function(){
     Route::get('stripe', 'stripe')->name('stripe.link');
     Route::post('stripe', 'stripePost')->name('stripe.post');
 });
+=======
+// ============ Subscription ============//
+Route::get('/user/profile', [frontendController::class, 'user_profile'])->name('user.profile');
+
+
+>>>>>>> Stashed changes
