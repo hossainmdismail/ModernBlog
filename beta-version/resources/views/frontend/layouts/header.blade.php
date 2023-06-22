@@ -70,7 +70,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('user.profile') }}">Profile</a></li>
-                            <li><a class="dropdown-item" href="blog-single.html">Logout</a></li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item" >Logout</button>
+                                </form>
+                                {{-- <a class="dropdown-item" href="blog-single.html"></a> --}}
+                            </li>
                         </ul>
                     </li>
 

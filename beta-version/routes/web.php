@@ -35,7 +35,7 @@ Auth::routes();
 
 
 //========= BackEnd Controllers =========//
-Route::group(['middleware' => ['checkRole:5','auth']], function () {
+Route::group(['middleware' => ['checkRole:5', 'auth']], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resources([
         'category'      => CategoryController::class,
@@ -52,7 +52,7 @@ Route::group(['middleware' => ['checkRole:5','auth']], function () {
 Route::get('/', [frontendController::class, 'home'])->name('home');
 Route::get('/about', [frontendController::class, 'about'])->name('about');
 Route::get('/contact', [frontendController::class, 'contact'])->name('contact');
-Route::post('user/login',[frontendController::class, 'login'])->name('user.login');
+Route::post('user/login', [frontendController::class, 'login'])->name('user.login');
 
 //========== Ajax ==========//
 Route::post('/getsubcat', [BlogPostController::class, 'getsubcat']);
@@ -69,16 +69,13 @@ Route::get('/subscription', [FrontPlanController::class, 'subscription'])->name(
 Route::get('/subscription/pay/{id}', [FrontPlanController::class, 'subscription_pay'])->name('subscription.pay');
 Route::post('/subscription/checkout', [FrontPlanController::class, 'subscription_checkout'])->name('subscription.checkout');
 
-<<<<<<< Updated upstream
+
 //============== Stripe Payments =============//
 
-Route::controller(StripePaymentController::class)->group(function(){
+Route::controller(StripePaymentController::class)->group(function () {
     Route::get('stripe', 'stripe')->name('stripe.link');
     Route::post('stripe', 'stripePost')->name('stripe.post');
 });
-=======
+
 // ============ Subscription ============//
 Route::get('/user/profile', [frontendController::class, 'user_profile'])->name('user.profile');
-
-
->>>>>>> Stashed changes
