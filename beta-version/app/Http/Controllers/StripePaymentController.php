@@ -92,7 +92,8 @@ class StripePaymentController extends Controller
             return back();
         } catch (\Throwable $th) {
             DB::rollback();
-            dd($th);
+            // dd($th);
+            return redirect()->route('pay.success');
         }
 
     }

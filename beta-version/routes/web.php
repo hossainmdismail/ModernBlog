@@ -68,7 +68,8 @@ Route::post('/social/icon', [SettingController::class, 'social_icon'])->name('so
 Route::get('/subscription', [FrontPlanController::class, 'subscription'])->name('subscription');
 Route::get('/subscription/pay/{id}', [FrontPlanController::class, 'subscription_pay'])->name('subscription.pay');
 Route::post('/subscription/checkout', [FrontPlanController::class, 'subscription_checkout'])->name('subscription.checkout');
-
+// ============ Subscription ============//
+Route::get('/pay/success', [FrontPlanController::class, 'pay_success'])->name('pay.success');
 
 //============== Stripe Payments =============//
 

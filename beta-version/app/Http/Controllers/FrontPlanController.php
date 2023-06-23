@@ -51,4 +51,10 @@ class FrontPlanController extends Controller
 
 
     }
+
+
+        //============= pay success ================
+        function pay_success(){
+            return view('frontend.pay_success');
+        }
 }
