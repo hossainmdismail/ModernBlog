@@ -41,6 +41,9 @@
                         <a class="nav-link" href="{{ route('about') }}">About</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('blogs') }}">Blogs</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
