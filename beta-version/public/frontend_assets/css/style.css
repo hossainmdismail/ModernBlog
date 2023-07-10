@@ -1105,9 +1105,7 @@ img.wave {
   left: 20px;
   top: 20px;
   z-index: 1;
-  background: #0095cf;
-  background: -webkit-linear-gradient(left, #0095cf 0%, #82d3e8 51%, #0095cf 100%);
-  background: linear-gradient(to right, #0095cf 0%, #82d3e8 57%, #0095cf 100%);
+  background:  #712bb3d6;
   background-size: 200% auto;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -1331,9 +1329,7 @@ img.wave {
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  background: #0095cf;
-  background: -webkit-linear-gradient(bottom, #0095cf 0%, #82d3e8 100%);
-  background: linear-gradient(to top, #0095cf 0%, #82d3e8 100%);
+  background:  #712bb3d6;
   z-index: 1;
 }
 .post.post-list-sm .post-title {
@@ -2092,7 +2088,7 @@ img.wave {
 }
 .widget ul.list li a:before {
   content: "";
-  color: #0095cf;
+  color:  #712bb3d6;
   font-family: "simple-line-icons";
   font-size: 11px;
   vertical-align: middle;
@@ -2440,7 +2436,7 @@ button:focus {
 }
 
 .nav_active {
-    background:linear-gradient(to right, #0095cf 0%, #82d3e8 57%, #0095cf 100%);
+    background: #712bb3d6;
     border-radius: 14px;
     color: white !important;
     background-size: 200% auto;
@@ -2449,7 +2445,7 @@ button:focus {
     border-radius: 14px;
     color: white !important;
     background: -webkit-linear-gradient(bottom, #82d3e8 0%, #006ecf 51%, #82d3e8 100%);
-    background: linear-gradient(to top, #82d3e8 0%, #006ecf 51%, #82d3e8 100%);
+    background:#712bb3;
     background-size: auto 200%;
 }
 .btn {
@@ -2480,9 +2476,7 @@ button:focus {
 .btn-default {
   color: #FFF;
   padding: 9.5px 36px;
-  background: #0095cf;
-  background: -webkit-linear-gradient(left, #0095cf 0%, #82d3e8 51%, #0095cf 100%);
-  background: linear-gradient(to right, #0095cf 0%, #82d3e8 57%, #0095cf 100%);
+  background:  #712bb3d6;
   background-size: 200% auto;
 }
 .btn-default:hover {
@@ -2536,9 +2530,7 @@ button:focus {
   color: #FFF;
   border: 0;
   border-radius: 16px;
-  background: #82d3e8;
-  background: -webkit-linear-gradient(bottom, #82d3e8 0%, #006ecf 51%, #82d3e8 100%);
-  background: linear-gradient(to top, #82d3e8 0%, #006ecf 51%, #82d3e8 100%);
+  background:  #712bb3d6;
   background-size: auto 200%;
   display: inline-flex;
   justify-content: center;
@@ -2556,7 +2548,7 @@ button:focus {
   transition: all 0.2s ease-in-out;
 }
 .icon-button:hover {
-  background-position: bottom center;
+    background: #712bb3;
   color: white;
 }
 
@@ -2741,9 +2733,7 @@ button:focus {
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff !important;
-  background: #0095cf;
-  background: -webkit-linear-gradient(left, #0095cf 0%, #82d3e8 51%, #0095cf 100%);
-  background: linear-gradient(to right, #0095cf 0%, #82d3e8 57%, #0095cf 100%);
+  background:  #712bb3d6;
   border-color: transparent;
   background-size: 200% auto;
 }

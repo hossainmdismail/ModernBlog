@@ -70,7 +70,7 @@
                     <!-- tab navs -->
                     <ul class="nav nav-tabs nav-pills nav-fill" id="postsTab" role="tablist">
                         <li class="nav-item" role="presentation"><button aria-controls="popular" aria-selected="true" class="nav-link active" data-bs-target="#popular" data-bs-toggle="tab" id="popular-tab" role="tab" type="button">Popular</button></li>
-                        <li class="nav-item" role="presentation"><button aria-controls="recent" aria-selected="false" class="nav-link" data-bs-target="#recent" data-bs-toggle="tab" id="recent-tab" role="tab" type="button">Recent</button></li>
+                        <li class="nav-item" role="presentation"><button aria-controls="Premium" aria-selected="false" class="nav-link" data-bs-target="#Premium" data-bs-toggle="tab" id="Premium-tab" role="tab" type="button">Premium</button></li>
                     </ul>
                     <!-- tab contents -->
                     <div class="tab-content" id="postsTabContent">
@@ -143,8 +143,9 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- recent posts -->
-                        <div aria-labelledby="recent-tab" class="tab-pane fade" id="recent" role="tabpanel">
+                        <div aria-labelledby="Premium-tab" class="tab-pane fade" id="Premium" role="tabpanel">
                             <!-- post -->
                             <div class="post post-list-sm circle">
                                 <div class="thumb circle">
@@ -231,7 +232,7 @@
                 <!-- section header -->
                 <div class="section-header">
                     <h3 class="section-title">Editor’s Pick</h3>
-                    <img src="{{ asset('settings/wave.svg') }}" class="wave" alt="wave" />
+                    <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
                 </div>
 
                 <div class="padding-30 rounded bordered">
@@ -462,7 +463,7 @@
                 <!-- section header -->
                 <div class="section-header">
                     <h3 class="section-title">Trending</h3>
-                    <img src="images/wave.svg" class="wave" alt="wave" />
+                    <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
                 </div>
 
                 <div class="padding-30 rounded bordered">
@@ -593,7 +594,7 @@
                 <!-- section header -->
                 <div class="section-header">
                     <h3 class="section-title">Inspiration</h3>
-                    <img src="images/wave.svg" class="wave" alt="wave" />
+                    <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
                     <div class="slick-arrows-top">
                         <button type="button" data-role="none" class="carousel-topNav-prev slick-custom-buttons" aria-label="Previous"><i class="icon-arrow-left"></i></button>
                         <button type="button" data-role="none" class="carousel-topNav-next slick-custom-buttons" aria-label="Next"><i class="icon-arrow-right"></i></button>
@@ -662,7 +663,7 @@
                 <!-- section header -->
                 <div class="section-header">
                     <h3 class="section-title">Latest Posts</h3>
-                    <img src="images/wave.svg" class="wave" alt="wave" />
+                    <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
                 </div>
 
                 <div class="padding-30 rounded bordered">
@@ -848,7 +849,7 @@
                     <div class="widget rounded">
                         <div class="widget-header text-left">
                             <h3 class="widget-title">Premium Posts</h3>
-                            <img src="images/wave.svg" class="wave" alt="wave" />
+                            <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
                         </div>
                         <div class="widget-content">
                             <!-- post -->
@@ -909,7 +910,7 @@
                     <div class="widget rounded">
                         <div class="widget-header text-left">
                             <h3 class="widget-title">Explore Topics</h3>
-                            <img src="images/wave.svg" class="wave" alt="wave" />
+                            <img src="{{ asset('settings/wave.svg') }}" class="wave" alt="wave" />
                         </div>
                         <div class="widget-content">
                             <ul class="list">

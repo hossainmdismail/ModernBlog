@@ -4,11 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< Updated upstream
-    "content-hash": "8d2b0d839f63891a04e1c306cd3178dc",
-=======
+
     "content-hash": "f2616111e2bbfcf3456949fdf2b9f1a4",
->>>>>>> Stashed changes
+
     "packages": [
         {
             "name": "brick/math",
