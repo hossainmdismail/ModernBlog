@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog_Posts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -10,7 +11,10 @@ class frontendController extends Controller
 {
     //========== home =============//
     function home(){
-        return view('frontend.index');
+        $blogposts = Blog_Posts::all();
+        return view('frontend.index', [
+            'blogposts'=>$blogposts,
+        ]);
     }
 
 
@@ -23,6 +27,15 @@ class frontendController extends Controller
     function contact(){
         return view('frontend.contact');
     }
+
+    // =========== single_blog ============//
+    function single_blog($id){
+        $single_blogs = Blog_Posts::find($id);
+        return view('frontend.single_blog', [
+            'single_blogs'=>$single_blogs,
+        ]);
+    }
+
     //============ Login =============//
     function login(Request $request){
         $credentials = $request->only('email','password');

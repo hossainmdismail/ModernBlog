@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-xl">
             <!-- site logo -->
-            <a class="navbar-brand" style="width: 120px !important" href="index.html"><img src="{{ asset('settings/e-blogger-logo.png') }}" alt="logo" /></a>
+            <a class="navbar-brand" style="width: 120px !important" href="{{ url('/') }}"><img src="{{ asset('settings/e-blogger-logo.png') }}" alt="logo" /></a>
 
             <div class="collapse navbar-collapse">
                 <!-- menus -->

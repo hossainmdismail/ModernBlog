@@ -20,4 +20,8 @@ class Blog_Posts extends Model
         'premium',
         'status',
     ];
+
+    function rel_to_cat(){
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 }
