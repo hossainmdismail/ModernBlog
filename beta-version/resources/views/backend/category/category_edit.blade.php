@@ -8,8 +8,9 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Edit category {{ $categorys->id }}</h4>
+                            <h4 class="card-title">Edit category</h4>
                         </div>
+                        <a href="{{ route('category.index') }}" class="btn btn-primary add-list"><i class="fa-solid fa-list-ul" style="color: #ffffff;"></i>List</a>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('category.update', ['category' => $categorys->id]) }}"  method="POST" enctype="multipart/form-data">

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('category_id');
             $table->integer('sub_category_id');
             $table->string('title');
+            $table->string('slug');
             $table->string('photo');
             $table->longText('content');
             $table->integer('views')->default(0);

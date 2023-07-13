@@ -41,6 +41,7 @@
                                         'fa-television',
                                         'fa-bolt',
                                         ];
+
                                         @endphp
                                         <div class="my-3" style="font-family: fontawesome; font-size: 22px; " >
                                             @foreach ($icons as $icon)

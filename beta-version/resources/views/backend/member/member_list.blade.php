@@ -9,12 +9,12 @@
                     <div>
                         <h4 class="mb-3">Members</h4>
                     </div>
-                    <a href="{{ route('category.create') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Member</a>
+                    <a href="{{ route('category.create') }}" class="btn btn-primary add-list"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>Add Member</a>
                 </div>
             </div>
             <div class="col-lg-12">
                 <div class="table-responsive rounded mb-3">
-                <table class="data-table table mb-0 tbl-server-info">
+                <table class="data-table mb-0 tbl-server-info">
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
                             <th>

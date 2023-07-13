@@ -12,6 +12,7 @@
                             <div class="header-title">
                                 <h4 class="card-title">Add Blog Post</h4>
                             </div>
+                            <a href="{{ route('blogpost.index') }}" class="btn btn-primary add-list"><i class="fa-solid fa-list-ul" style="color: #ffffff;"></i>List</a>
                         </div>
                         <div class="card-body">
 

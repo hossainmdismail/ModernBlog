@@ -11,8 +11,8 @@
       <link rel="shortcut icon" href="{{ asset('settings/fav.png') }}" type="image/x-icon">
       <link rel="stylesheet" href="{{ asset('backend_assets') }}/css/backend-plugin.min.css">
       <link rel="stylesheet" href="{{ asset('backend_assets') }}/css/backende209.css?v=1.0.0">
-      <link rel="stylesheet" href="{{ asset('backend_assets') }}/vendor/%40fortawesome/fontawesome-free/css/all.min.css">
-      <link rel="stylesheet" href="{{ asset('backend_assets') }}/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+      {{-- <link rel="stylesheet" href="{{ asset('backend_assets') }}/vendor/%40fortawesome/fontawesome-free/css/all.min.css"> --}}
+      <link rel="stylesheet" href="{{ asset('backend_assets/css/all.min.css') }}">
       <link rel="stylesheet" href="{{ asset('backend_assets') }}/vendor/remixicon/fonts/remixicon.css">  </head>
       <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 

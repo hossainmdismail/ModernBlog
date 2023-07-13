@@ -79,13 +79,13 @@ class BlogPostController extends Controller
             'sub_category_id'   => $request->sub_category_id,
             'premium'           => $request->blog_type,
             'title'             => $request->title,
+            'slug'             => Str::slug($request->title),
             'photo'             => Photo::$name,
             'content'           => $request->content,
             'created_at'        => Carbon::now(),
         ]);
         Post_Seo::insert([
             'post_id'   => $post->id,
-            'slugs'      => Str::slug($request->title),
             'meta_title' => $request->meta_title,
             'meta_tags' => $request->meta_tags,
             'meta_descp' => $request->meta_descp,

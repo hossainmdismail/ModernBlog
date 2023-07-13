@@ -14,6 +14,7 @@ class Blog_Posts extends Model
         'category_id',
         'sub_category_id',
         'title',
+        'slug',
         'photo',
         'content',
         'views',

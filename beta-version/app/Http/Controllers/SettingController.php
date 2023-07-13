@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\setting;
+use App\Models\socialLink;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -51,17 +52,16 @@ class SettingController extends Controller
 
     //=========== social_icon ============
     function social_icon(Request $request){
-        // print_r($request->all());
-        // die();
+
         $request->validate([
             'icon'     => 'required',
             'link'     => 'required',
         ]);
 
-        setting::insert([
+        socialLink::insert([
             'icon'          => $request->icon,
             'link'          => $request->link,
-            // 'status'        => $request->status,
+            'status'        => $request->status,
             'created_at'    => Carbon::now(),
         ]);
         Alert::toast('Social icon add Successfully','success');

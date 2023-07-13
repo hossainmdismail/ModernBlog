@@ -36,30 +36,7 @@
                         <span class="ml-4">Plans</span>
                     </a>
                 </li>
-                {{-- Item --}}
-                <li class=" ">
-                    <a href="#product" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                        <svg class="svg-icon" id="p-dash2" width="20" height="20"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                        <span class="ml-4">Products</span>
-                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                        </svg>
-                    </a>
-                    <ul id="product" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="page-list-product.html">
-                                <i class="las la-minus"></i><span>List Product</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="page-add-product.html">
-                                <i class="las la-minus"></i><span>Add Product</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
                 {{-- Item --}}
                 <li class=" ">
                     <a href="#category" class="collapsed" data-toggle="collapse" aria-expanded="false">
@@ -74,12 +51,12 @@
                     <ul id="category" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li class="">
                                     <a href="{{ route('category.index') }}">
-                                        <i class="las la-minus"></i><span>List Category</span>
+                                        <i class="fa-solid fa-minus" style="color: #828282;"></i><span>List Category</span>
                                     </a>
                             </li>
                             <li class="">
                                     <a href="{{ route('category.create') }}">
-                                        <i class="las la-minus"></i><span>Add Category</span>
+                                        <i class="fa-solid fa-minus" style="color: #828282;"></i><span>Add Category</span>
                                     </a>
                             </li>
                     </ul>
@@ -98,12 +75,12 @@
                     <ul id="subcategory" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li class="">
                                     <a href="{{ route('subcategory.index') }}">
-                                        <i class="las la-minus"></i><span>List Sub Category</span>
+                                        <i class="fa-solid fa-minus" style="color: #828282;"></i><span>List Sub Category</span>
                                     </a>
                             </li>
                             <li class="">
                                     <a href="{{ route('subcategory.create') }}">
-                                        <i class="las la-minus"></i><span>Add SubCategory</span>
+                                        <i class="fa-solid fa-minus" style="color: #828282;"></i><span>Add SubCategory</span>
                                     </a>
                             </li>
                     </ul>
@@ -122,12 +99,12 @@
                     <ul id="blogpost" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li class="">
                                 <a href="{{ route('blogpost.index') }}">
-                                    <i class="las la-minus"></i><span>List Blog Post</span>
+                                    <i class="fa-solid fa-minus" style="color: #828282;"></i><span>List Blog Post</span>
                                 </a>
                             </li>
                             <li class="">
                                     <a href="{{ route('blogpost.create') }}">
-                                        <i class="las la-minus"></i><span>Add Blog Post</span>
+                                        <i class="fa-solid fa-minus" style="color: #828282;"></i><span>Add Blog Post</span>
                                     </a>
                             </li>
                     </ul>
@@ -146,12 +123,12 @@
                     <ul id="setting" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li class="">
                                 <a href="{{ route('site.setting') }}">
-                                    <i class="las la-minus"></i><span>Site Setting</span>
+                                    <i class="fa-solid fa-minus" style="color: #828282;"></i><span>Site Setting</span>
                                 </a>
                             </li>
                             <li class="">
                                     <a href="{{ route('social.link') }}">
-                                        <i class="las la-minus"></i><span>Social Login</span>
+                                        <i class="fa-solid fa-minus" style="color: #828282;"></i><span>Social Login</span>
                                     </a>
                             </li>
                     </ul>
@@ -159,17 +136,7 @@
 
             </ul>
         </nav>
-        <div id="sidebar-bottom" class="position-relative sidebar-bottom">
-            <div class="card border-none">
-                <div class="card-body p-0">
-                    <div class="sidebarbottom-content">
-                        <div class="image"><img src="../assets/images/layouts/side-bkg.png" class="img-fluid" alt="side-bkg"></div>
-                        <h6 class="mt-4 px-4 body-title">Get More Feature by Upgrading</h6>
-                        <button type="button" class="btn sidebar-bottom-btn mt-4">Go Premium</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="p-3"></div>
     </div>
   </div>

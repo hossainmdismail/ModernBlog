@@ -8,10 +8,8 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                     <div>
                         <h4 class="mb-3">Category List</h4>
-                        <p class="mb-0">Use category list as to describe your overall core business from the provided list. <br>
-                        Click the name of the category where you want to add a list item. .</p>
                     </div>
-                    <a href="{{ route('category.create') }}" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Category</a>
+                    <a href="{{ route('category.create') }}" class="btn btn-primary add-list"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>Add</a>
                 </div>
             </div>
             <div class="col-lg-12">

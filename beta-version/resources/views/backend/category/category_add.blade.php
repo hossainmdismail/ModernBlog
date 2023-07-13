@@ -10,6 +10,7 @@
                         <div class="header-title">
                             <h4 class="card-title">Add category</h4>
                         </div>
+                        <a href="{{ route('category.index') }}" class="btn btn-primary add-list"><i class="fa-solid fa-list-ul" style="color: #ffffff;"></i>List</a>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('category.store') }}"  method="POST" enctype="multipart/form-data">
@@ -39,7 +40,7 @@
                                     </div>
                                 </div> --}}
                                 <hr>
-                                
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Meta Title *</label>

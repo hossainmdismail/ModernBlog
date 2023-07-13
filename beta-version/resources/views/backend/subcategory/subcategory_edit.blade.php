@@ -10,6 +10,7 @@
                         <div class="header-title">
                             <h4 class="card-title">Edit Sub category</h4>
                         </div>
+                        <a href="{{ route('subcategory.index') }}" class="btn btn-primary add-list"><i class="fa-solid fa-list-ul" style="color: #ffffff;"></i>List</a>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('subcategory.update',['subcategory' => $sub_cat->id]) }}"  method="POST" enctype="multipart/form-data">
