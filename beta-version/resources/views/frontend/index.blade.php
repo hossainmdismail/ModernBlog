@@ -12,59 +12,27 @@
 
                 <div class="header-carousel-widget">
                     <!-- featured post large -->
-                    <div class="post featured-post-lg">
-                        <div class="details clearfix">
-                            <a href="category.html" class="category-badge">Inspiration</a>
-                            <h2 class="post-title"><a href="blog-single.html">5 Easy Ways You Can Turn Future Into Success</a></h2>
-                            <ul class="meta list-inline mb-0">
-                                <li class="list-inline-item"><a href="#">Katen Doe</a></li>
-                                <li class="list-inline-item">29 March 2021</li>
-                            </ul>
-                        </div>
-                        <a href="blog-single.html">
-                            <div class="thumb rounded">
-                                <div class="inner data-bg-image" data-bg-image="images/posts/featured-lg.jpg"></div>
+                    @foreach ($recents as $recent)
+                        <div class="post featured-post-lg">
+                            <div class="details clearfix">
+                                <a href="category.html" class="category-badge">{{ $recent->rel_to_cat->name }}</a>
+                                <h2 class="post-title"><a href="blog-single.html">{{ $recent->title }}</a></h2>
+                                <ul class="meta list-inline mb-0">
+                                    <li class="list-inline-item"><a href="#">{{ $recent->rel_to_user->name }}</a></li>
+                                    <li class="list-inline-item">29 March 2021</li>
+                                </ul>
                             </div>
-                        </a>
-                    </div>
-                    <!-- featured post large -->
-                    <div class="post featured-post-lg">
-                        <div class="details clearfix">
-                            <a href="category.html" class="category-badge">Inspiration</a>
-                            <h2 class="post-title"><a href="blog-single.html">10 Ways To Immediately Start Selling Furniture</a></h2>
-                            <ul class="meta list-inline mb-0">
-                                <li class="list-inline-item"><a href="#">Katen Doe</a></li>
-                                <li class="list-inline-item">29 March 2021</li>
-                            </ul>
+                            <a href="blog-single.html">
+                                <div class="thumb rounded">
+                                    <div class="inner data-bg-image" data-bg-image="{{ asset('uploads/blog/'.$recent->photo) }}"></div>
+                                </div>
+                            </a>
                         </div>
-                        <a href="blog-single.html">
-                            <div class="thumb rounded">
-                                <div class="inner data-bg-image" data-bg-image="images/posts/featured-lg.jpg"></div>
-                            </div>
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
-                {{-- <!-- featured post large -->
-                <div class="post featured-post-lg">
-                    <div class="details clearfix">
-                        <a href="category.html" class="category-badge">Inspiration</a>
-                        <h2 class="post-title"><a href="blog-single.html">5 Easy Ways You Can Turn Future Into Success</a></h2>
-                        <ul class="meta list-inline mb-0">
-                            <li class="list-inline-item"><a href="#">Katen Doe</a></li>
-                            <li class="list-inline-item">29 March 2021</li>
-                        </ul>
-                    </div>
-                    <a href="blog-single.html">
-                        <div class="thumb rounded">
-                            <div class="inner data-bg-image" data-bg-image="images/posts/featured-lg.jpg"></div>
-                        </div>
-                    </a>
-                </div> --}}
-
             </div>
 
             <div class="col-lg-4">
-
                 <!-- post tabs -->
                 <div class="post-tabs rounded bordered">
                     <!-- tab navs -->
@@ -76,140 +44,46 @@
                     <div class="tab-content" id="postsTabContent">
                         <!-- loader -->
                         <div class="lds-dual-ring"></div>
-                        <!-- popular posts -->
                         <div aria-labelledby="popular-tab" class="tab-pane fade show active" id="popular" role="tabpanel">
                             <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="images/posts/tabs-1.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
+                            @foreach ($populars as $popular)
+                                <div class="post post-list-sm circle">
+                                    <div class="thumb circle">
+                                        <a href="{{ route('single.blog',$popular->id) }}">
+                                            <div class="inner">
+                                                <img src="{{ asset('uploads/blog/'.$popular->photo) }}" alt="post-title" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="details clearfix">
+                                        <h6 class="post-title my-0"><a href="{{ route('single.blog',$popular->id) }}">{{ $popular->title }}</a></h6>
+                                        <ul class="meta list-inline mt-1 mb-0">
+                                            <li class="list-inline-item">{{ $popular->created_at->format('d F Y') }}</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">3 Easy Ways To Make Your iPhone Faster</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="images/posts/tabs-2.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">An Incredibly Easy Method That Works For All</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="images/posts/tabs-3.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">10 Ways To Immediately Start Selling Furniture</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="images/posts/tabs-4.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">15 Unheard Ways To Achieve Greater Walker</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
-
-                        <!-- recent posts -->
+                        <!-- premium posts -->
                         <div aria-labelledby="Premium-tab" class="tab-pane fade" id="Premium" role="tabpanel">
-                            <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="images/posts/tabs-2.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
+                            @foreach ($premiumRecents as $premium)
+                                <!-- post -->
+                                <div class="post post-list-sm circle">
+                                    <div class="thumb circle">
+                                        <a href="{{ route('single.blog',$premium->id) }}">
+                                            <div class="inner">
+                                                <img src="{{ asset('uploads/blog/'.$premium->photo) }}" alt="post-title" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="details clearfix">
+                                        <h6 class="post-title my-0"><a href="{{ route('single.blog',$premium->id) }}">{{ $premium->title }}</a></h6>
+                                        <ul class="meta list-inline mt-1 mb-0">
+                                            <li class="list-inline-item"><span class="premium_pill">Premium</span> {{ $premium->created_at->format('d F Y') }}</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">An Incredibly Easy Method That Works For All</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="images/posts/tabs-1.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">3 Easy Ways To Make Your iPhone Faster</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="images/posts/tabs-4.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">15 Unheard Ways To Achieve Greater Walker</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="images/posts/tabs-3.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">10 Ways To Immediately Start Selling Furniture</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -237,16 +111,11 @@
 
                 <div class="padding-30 rounded bordered">
                     <div class="row gy-5">
-                        @foreach ($blogposts as $blogpost)
-                            {{-- item big --}}
+                        {{-- @foreach ($premiums as $blogpost)
                             <div class="col-sm-6">
-                                <!-- post -->
                                 <div class="post">
                                     <div class="thumb rounded">
                                         <a href="category.html" class="category-badge position-absolute">{{ $blogpost->rel_to_cat->name }}</a>
-                                        {{-- <span class="post-format">
-                                            <i class="icon-picture"></i>
-                                        </span> --}}
                                         <a href="{{ route('single.blog', $blogpost->id) }}">
                                             <div class="inner">
                                                 <img src="{{ asset('frontend_assets/images') }}/posts/editor-lg.jpg" alt="post-title" />
@@ -261,7 +130,7 @@
                                     </h5>
                                 </div>
                             </div>
-                        @endforeach
+                        @endforeach --}}
                         {{-- item List --}}
                         <div class="col-sm-6">
                             <!-- post -->
@@ -772,56 +641,24 @@
                         </div>
                         <div class="widget-content">
                             <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <span class="number">$</span>
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="{{ asset('frontend_assets/images') }}/posts/tabs-1.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
+                            @foreach ($premiumTops as $key => $premiumTop )
+                                <div class="post post-list-sm circle">
+                                    <div class="thumb circle">
+                                        <span class="number">{{ $key+1 }}</span>
+                                        <a href="blog-single.html">
+                                            <div class="inner">
+                                                <img src="{{ asset('uploads/blog/'.$premiumTop->photo) }}" alt="post-title" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="details clearfix">
+                                        <h6 class="post-title my-0"><a href="blog-single.html">{{ $premiumTop->title }}</a></h6>
+                                        <ul class="meta list-inline mt-1 mb-0">
+                                            <li class="list-inline-item">29 March 2021</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">3 Easy Ways To Make Your iPhone Faster</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <span class="number">$</span>
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="{{ asset('frontend_assets/images') }}/posts/tabs-2.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">An Incredibly Easy Method That Works For All</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- post -->
-                            <div class="post post-list-sm circle">
-                                <div class="thumb circle">
-                                    <span class="number">$</span>
-                                    <a href="blog-single.html">
-                                        <div class="inner">
-                                            <img src="{{ asset('frontend_assets/images') }}/posts/tabs-3.jpg" alt="post-title" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="details clearfix">
-                                    <h6 class="post-title my-0"><a href="blog-single.html">10 Ways To Immediately Start Selling Furniture</a></h6>
-                                    <ul class="meta list-inline mt-1 mb-0">
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 

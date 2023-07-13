@@ -1167,7 +1167,7 @@ img.wave {
 }
 .post .thumb.circle .inner {
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: 14%;
 }
 .post .thumb.top-rounded .inner {
   overflow: hidden;
@@ -3303,5 +3303,13 @@ span.currentTimeDate {
 }
 header.header-top-pan {
     padding: 10px 0;
-    background: #eaf9ffa3;
+    background: #9038bc12;
+}
+.premium_pill{
+    background: #f0e5f3;
+    padding: 2px 6px;
+    font-size: 11px;
+    color: #020202c7;
+    border-radius: 6px;
+    font-weight: 300;
 }

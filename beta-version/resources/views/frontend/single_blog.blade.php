@@ -8,9 +8,9 @@
 
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Inspiration</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ $single_blogs->title }}</li>
+                <li><a href="{{  URL('/') }}">Home</a></li> <span style="margin: 0px 6px 0px 6px">/</span>
+                <li><a href="#">{{ $single_blogs->rel_to_cat->name }}</a></li> <span style="margin: 0px 6px 0px 6px">/</span>
+                <li class="active" aria-current="page">{{ $single_blogs->title }}</li>
             </ol>
         </nav>
 
@@ -23,14 +23,13 @@
                     <div class="post-header">
                         <h1 class="title mt-0 mb-3">{{ $single_blogs->title }}</h1>
                         <ul class="meta list-inline mb-0">
-                            <li class="list-inline-item"><a href="#"><img src="images/other/author-sm.png" class="author" alt="author"/>Katen Doe</a></li>
-                            <li class="list-inline-item"><a href="#">Trending</a></li>
-                            <li class="list-inline-item">29 March 2021</li>
+                            <li class="list-inline-item"><a href="#">{{ $single_blogs->rel_to_cat->name }}</a></li>
+                            <li class="list-inline-item">{{ $single_blogs->created_at->format('d-F-Y') }}</li>
                         </ul>
                     </div>
                     <!-- featured image -->
                     <div class="featured-image">
-                        <img src="images/posts/featured-lg.jpg" alt="post-title" />
+                        <img src="{{ asset('uploads/blog/'.$single_blogs->photo) }}" alt="post-title" />
                     </div>
                     <!-- post content -->
                     <div class="post-content clearfix">
@@ -281,17 +280,15 @@
                     <!-- widget categories -->
                     <div class="widget rounded">
                         <div class="widget-header text-center">
-                            <h3 class="widget-title">Explore Topics</h3>
+                            <h3 class="widget-title">Category</h3>
                             <img src="images/wave.svg" class="wave" alt="wave" />
                         </div>
                         <div class="widget-content">
                             <ul class="list">
-                                <li><a href="#">Lifestyle</a><span>(5)</span></li>
-                                <li><a href="#">Inspiration</a><span>(2)</span></li>
-                                <li><a href="#">Fashion</a><span>(4)</span></li>
-                                <li><a href="#">Politic</a><span>(1)</span></li>
-                                <li><a href="#">Trending</a><span>(7)</span></li>
-                                <li><a href="#">Culture</a><span>(3)</span></li>
+                                @foreach ($category as $categories)
+                                    <li><a href="#">{{ $categories->name }}</a><span>({{ App\Models\Blog_Posts::where('category_id',$categories->id)->count() }})</span></li>
+                                @endforeach
+
                             </ul>
                         </div>
 
