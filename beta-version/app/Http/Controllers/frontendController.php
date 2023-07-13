@@ -61,6 +61,14 @@ class frontendController extends Controller
         return view('frontend.contact');
     }
 
+    // =========== blogs ============//
+    function blogs(){
+        $blogs = Blog_Posts::all();
+        return view('frontend.blogs', [
+            'blogs'=>$blogs,
+        ]);
+    }
+
     // =========== single_blog ============//
     function single_blog($id){
         if (Auth::check()) { //Checking if user login
