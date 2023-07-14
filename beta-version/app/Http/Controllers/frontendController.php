@@ -86,33 +86,50 @@ class frontendController extends Controller
 
     // =========== single_blog ============//
     function single_blog($id){
-        if (Auth::check()) { //Checking if user login
-            if (Subscriptions::where('user_id',Auth::user()->id)->exists()) {
-                $subscription_date = Subscriptions::select('end_date')->where('user_id',Auth::user()->id)->first()->end_date;
-                $today = date('2023-07-22');
-                if ($today > $subscription_date) { //check users for subscription date
-                    Alert::toast('Your Subscription Date has Expired','error');
-                    return redirect()->route('subscription'); //Redirect with alert message if user subscription date expired
-                }else { //Give permission to user
-                    $single_blogs = Blog_Posts::find($id);
-                    $category = Category::select('id','name')->get();
+        $vv = null;
+        if (Blog_Posts::find($id)->premium != 'free') { //checking premium
+            if (Auth::check()) { //Checking if user login
+                if (Subscriptions::where('user_id',Auth::user()->id)->exists()) {
+                    $subscription_date = Subscriptions::select('end_date')->where('user_id',Auth::user()->id)->first()->end_date;
+                    $today = date('2023-07-22');
+                    if ($today > $subscription_date) { //check users for subscription date
+                        Alert::toast('Your Subscription Date has Expired','error');
+                        return redirect()->route('subscription'); //Redirect with alert message if user subscription date expired
+                    }else { //Give permission to user
+                        $single_blogs = Blog_Posts::find($id);
+                        $category = Category::select('id','name')->get();
 
-                    $key = 'Blog_'.$single_blogs->id;
-                    if(!session()->has($key)){
-                        $single_blogs->increment('views');
-                        session()->put($key,1);
+                        $key = 'Blog_'.$single_blogs->id;
+                        if(!session()->has($key)){
+                            $single_blogs->increment('views');
+                            session()->put($key,1);
+                        }
+
+                        return view('frontend.single_blog', [
+                            'single_blogs'=>$single_blogs,
+                            'category'=>$category,
+                        ]);
                     }
-
-                    return view('frontend.single_blog', [
-                        'single_blogs'=>$single_blogs,
-                        'category'=>$category,
-                    ]);
+                }else{
+                    return redirect()->route('subscription'); //Redirect if  user not subscribed
                 }
             }else{
-                return redirect()->route('subscription'); //Redirect if  user not subscribed
+                return redirect()->route('subscription'); //Redirect if not an user
             }
-        }else{
-            return redirect()->route('subscription'); //Redirect if not an user
+        }else{ //checking free blog
+            $single_blogs = Blog_Posts::find($id);
+            $category = Category::select('id','name')->get();
+
+            $key = 'Blog_'.$single_blogs->id;
+            if(!session()->has($key)){
+                $single_blogs->increment('views');
+                session()->put($key,1);
+            }
+
+            return view('frontend.single_blog', [
+                'single_blogs'=>$single_blogs,
+                'category'=>$category,
+            ]);
         }
     }
 
