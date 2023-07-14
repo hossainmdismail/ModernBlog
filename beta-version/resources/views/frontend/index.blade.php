@@ -670,12 +670,9 @@
                         </div>
                         <div class="widget-content">
                             <ul class="list">
-                                <li><a href="#">Lifestyle</a><span>(5)</span></li>
-                                <li><a href="#">Inspiration</a><span>(2)</span></li>
-                                <li><a href="#">Fashion</a><span>(4)</span></li>
-                                <li><a href="#">Politic</a><span>(1)</span></li>
-                                <li><a href="#">Trending</a><span>(7)</span></li>
-                                <li><a href="#">Culture</a><span>(3)</span></li>
+                                @foreach ($categorys as $category)
+                                    <li><a href="{{ route('category.post', $category->id) }}">Lifestyle</a><span>(5)</span></li>
+                                @endforeach
                             </ul>
                         </div>
 

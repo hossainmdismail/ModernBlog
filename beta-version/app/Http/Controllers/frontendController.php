@@ -42,11 +42,15 @@ class frontendController extends Controller
         ->get()
         ->take(4);
 
+        // category
+        $categorys = Category::all();
+
         return view('frontend.index', [
             'premiumRecents'=>$premiumRecent,
             'premiumTops'=>$premiumTop,
             'populars'=>$popular,
             'recents'=>$recent,
+            'categorys'=>$categorys,
         ]);
     }
 
@@ -60,6 +64,17 @@ class frontendController extends Controller
     function contact(){
         return view('frontend.contact');
     }
+
+    // =========== category ============//
+    function category_post($id){
+        $categorys = Category::find($id);
+        $blog_post = Blog_Posts::where('category_id', $id)->get();
+        return view('frontend.category', [
+            'categorys'=>$categorys,
+            'blog_post'=>$blog_post,
+        ]);
+    }
+
 
     // =========== blogs ============//
     function blogs(){
