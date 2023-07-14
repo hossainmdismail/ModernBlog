@@ -1612,12 +1612,6 @@ img.wave {
   color: #FFF;
   font-size: 36px;
 }
-.single-cover .cover-content .breadcrumb .breadcrumb-item a {
-  color: #FFF;
-}
-.single-cover .cover-content .breadcrumb-item + .breadcrumb-item::before {
-  color: #FFF;
-}
 .single-cover .cover-content .meta {
   color: rgba(255, 255, 255, 0.6);
 }
@@ -2575,15 +2569,7 @@ button:focus {
   background-color: transparent;
   border-radius: 0;
 }
-.breadcrumb .breadcrumb-item a {
-  color: #9faabb;
-}
-.breadcrumb .breadcrumb-item a:hover {
-  color: #0095cf;
-}
-.breadcrumb .breadcrumb-item.active {
-  color: #9faabb;
-}
+
 
 /* === Form Control === */
 .form-control {
@@ -3261,10 +3247,6 @@ button:focus {
 
   .comments li.comment.child {
     margin-left: 30px;
-  }
-
-  .breadcrumb .breadcrumb-item.active {
-    display: none;
   }
 
   .post-carousel-widget .post-carousel {

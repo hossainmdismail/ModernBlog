@@ -106,7 +106,7 @@
                 <!-- section header -->
                 <div class="section-header">
                     <h3 class="section-title">Editor’s Pick</h3>
-                    <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
+                    <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave" />
                 </div>
 
                 <div class="padding-30 rounded bordered">
@@ -251,7 +251,7 @@
                 <!-- section header -->
                 <div class="section-header">
                     <h3 class="section-title">Trending</h3>
-                    <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
+                    <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave" />
                 </div>
 
                 <div class="padding-30 rounded bordered">
@@ -382,7 +382,7 @@
                 <!-- section header -->
                 <div class="section-header">
                     <h3 class="section-title">Inspiration</h3>
-                    <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
+                    <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave" />
                     <div class="slick-arrows-top">
                         <button type="button" data-role="none" class="carousel-topNav-prev slick-custom-buttons" aria-label="Previous"><i class="icon-arrow-left"></i></button>
                         <button type="button" data-role="none" class="carousel-topNav-next slick-custom-buttons" aria-label="Next"><i class="icon-arrow-right"></i></button>
@@ -451,7 +451,7 @@
                 <!-- section header -->
                 <div class="section-header">
                     <h3 class="section-title">Latest Posts</h3>
-                    <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
+                    <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave" />
                 </div>
 
                 <div class="padding-30 rounded bordered">
@@ -637,7 +637,7 @@
                     <div class="widget rounded">
                         <div class="widget-header text-left">
                             <h3 class="widget-title">Premium Posts</h3>
-                            <img src="{{ asset('frontend_assets/images/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave" />
                         </div>
                         <div class="widget-content">
                             <!-- post -->
@@ -666,7 +666,7 @@
                     <div class="widget rounded">
                         <div class="widget-header text-left">
                             <h3 class="widget-title">Explore Topics</h3>
-                            <img src="{{ asset('settings/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave" />
                         </div>
                         <div class="widget-content">
                             <ul class="list">
@@ -682,7 +682,7 @@
                     <div class="widget rounded">
                         <div class="widget-header text-left">
                             <h3 class="widget-title">Newsletter</h3>
-                            <img src="images/wave.svg" class="wave" alt="wave" />
+                            <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave" />
                         </div>
                         <div class="widget-content">
                             <span class="newsletter-headline text-center mb-3">Join 70,000 subscribers!</span>
@@ -700,58 +700,28 @@
                     <div class="widget rounded">
                         <div class="widget-header text-left">
                             <h3 class="widget-title">Celebration</h3>
-                            <img src="images/wave.svg" class="wave" alt="wave" />
+                            <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave" />
                         </div>
                         <div class="widget-content">
                             <div class="post-carousel-widget">
                                 <!-- post -->
-                                <div class="post post-carousel">
-                                    <div class="thumb rounded">
-                                        <a href="category.html" class="category-badge position-absolute">How to</a>
-                                        <a href="blog-single.html">
-                                            <div class="inner">
-                                                <img src="images/widgets/widget-carousel-1.jpg" alt="post-title" />
-                                            </div>
-                                        </a>
+                                @foreach (App\Models\Blog_Posts::where('status',1)->orderBy('id','DESC')->get()->take(5) as $trending)
+                                    <div class="post post-carousel">
+                                        <div class="thumb rounded">
+                                            <a href="{{ route('category.post',$trending->rel_to_cat->id) }}" class="category-badge position-absolute">{{ $trending->rel_to_cat->name }}</a>
+                                            <a href="{{ route('single.blog',$trending->id) }}">
+                                                <div class="inner">
+                                                    <img src="{{ asset('uploads/blog/'.$trending->photo) }}" alt="post-title" />
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <h5 class="post-title mb-0 mt-4"><a href="{{ route('single.blog',$trending->id) }}">{{ $trending->title }}</a></h5>
+                                        <ul class="meta list-inline mt-2 mb-0">
+                                            @if ($trending->premium == 'premium')<li class="list-inline-item"> <span class="premium_pill">Premium</span></li> @endif
+                                            <li class="list-inline-item">{{ $trending->created_at->format('d F Y') }}</li>
+                                        </ul>
                                     </div>
-                                    <h5 class="post-title mb-0 mt-4"><a href="blog-single.html">5 Easy Ways You Can Turn Future Into Success</a></h5>
-                                    <ul class="meta list-inline mt-2 mb-0">
-                                        <li class="list-inline-item"><a href="#">Katen Doe</a></li>
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                                <!-- post -->
-                                <div class="post post-carousel">
-                                    <div class="thumb rounded">
-                                        <a href="category.html" class="category-badge position-absolute">Trending</a>
-                                        <a href="blog-single.html">
-                                            <div class="inner">
-                                                <img src="images/widgets/widget-carousel-2.jpg" alt="post-title" />
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <h5 class="post-title mb-0 mt-4"><a href="blog-single.html">Master The Art Of Nature With These 7 Tips</a></h5>
-                                    <ul class="meta list-inline mt-2 mb-0">
-                                        <li class="list-inline-item"><a href="#">Katen Doe</a></li>
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
-                                <!-- post -->
-                                <div class="post post-carousel">
-                                    <div class="thumb rounded">
-                                        <a href="category.html" class="category-badge position-absolute">How to</a>
-                                        <a href="blog-single.html">
-                                            <div class="inner">
-                                                <img src="images/widgets/widget-carousel-1.jpg" alt="post-title" />
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <h5 class="post-title mb-0 mt-4"><a href="blog-single.html">5 Easy Ways You Can Turn Future Into Success</a></h5>
-                                    <ul class="meta list-inline mt-2 mb-0">
-                                        <li class="list-inline-item"><a href="#">Katen Doe</a></li>
-                                        <li class="list-inline-item">29 March 2021</li>
-                                    </ul>
-                                </div>
+                                @endforeach
                             </div>
                             <!-- carousel arrows -->
                             <div class="slick-arrows-bot">

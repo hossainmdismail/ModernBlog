@@ -5,14 +5,14 @@
                 <div class="col-md-4">
                     <div class="footer_about">
                         <h4>About</h4>
-                        <img src="images/wave.svg" class="wave" alt="wave">
+                        <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur aperiam ab ipsum veniam. Fugiat iste reiciendis quas adipisci, sapiente recusandae debitis deserunt voluptatem repudiandae omnis veritatis quibusdam, alias eius tempora.</p>
                     </div>
                 </div>
                 <div class="offset-md-1 col-md-3">
                     <div class="footer_navbar">
                         <h4>Navbar</h4>
-                        <img src="images/wave.svg" class="wave" alt="wave">
+                        <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave">
                         <ul>
                             <li>
                                 <a class="nav-link" href="index.html">Home</a>
@@ -33,7 +33,7 @@
                 <div class="col-md-4">
                     <div class="footer_follow">
                         <h4>Follow us</h4>
-                        <img src="images/wave.svg" class="wave" alt="wave">
+                        <img src="{{ asset('settings/wave.png') }}" class="wave" alt="wave">
                         <ul class="social-icons list-unstyled list-inline mb-0">
                             <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
