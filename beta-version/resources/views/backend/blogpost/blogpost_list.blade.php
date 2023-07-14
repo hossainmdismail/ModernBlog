@@ -23,15 +23,14 @@
                                     <label for="checkbox1" class="mb-0"></label>
                                 </div>
                             </th>
-                            <th>User Id</th>
-                            <th>Category Id</th>
-                            <th>Sub Category Id</th>
-                            <th>Title</th>
+                            <th>User</th>
+                            <th>Category</th>
+                            <th>Sub Category</th>
                             <th>Photo</th>
-                            <th>Status</th>
+                            <th>Title</th>
                             <th>Content</th>
-                            <th>Views</th>
                             <th>Premium</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -44,17 +43,25 @@
                                         <label for="checkbox2" class="mb-0"></label>
                                     </div>
                                 </td>
+                                <td>{{ $blogpost->rel_to_user->name }}</td>
+                                <td>{{ $blogpost->rel_to_cat->name }}</td>
+                                <td>{{ $blogpost->rel_to_subcat->name }}</td>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
-                                        <div>
-                                            Organic Cream
-                                            <p class="mb-0"><small>This is test Product</small></p>
-                                        </div>
+                                        <img src="{{ asset('uploads/blog/'.$blogpost->photo) }}" class="img-fluid rounded avatar-50 mr-3" alt="image">
                                     </div>
                                 </td>
-                                <td>CREM01</td>
-                                <td>Beauty</td>
+                                <td>{{ $blogpost->title }}</td>
+                                <td>{{ $blogpost->content }}</td>
+                                <td>{{ $blogpost->premium }}</td>
+
+                                <td>
+                                    @if($blogpost->status == 1)
+                                    Active
+                                @else
+                                    Deactive
+                                @endif
+                                </td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"

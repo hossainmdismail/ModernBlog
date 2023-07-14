@@ -25,10 +25,10 @@
                             </th>
                             {{-- <th>Photo</th> --}}
                             <th>Category Name</th>
-                            <th>Status</th>
                             <th>Meta Title</th>
                             <th>Meta Tage</th>
                             <th>Meta Description</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>

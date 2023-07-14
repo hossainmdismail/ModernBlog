@@ -8,7 +8,6 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                     <div>
                         <h4 class="mb-3">Sub Category List</h4>
-
                     </div>
                     <a href="{{ route('subcategory.create') }}" class="btn btn-primary add-list"><i class="fa-solid fa-pen-to-square" style="color: #ffffff;"></i>Add</a>
                 </div>
@@ -24,9 +23,8 @@
                                     <label for="checkbox1" class="mb-0"></label>
                                 </div>
                             </th>
-                            <th>Category Name</th>
-                            <th>Photo</th>
                             <th>Sub Category Name</th>
+                            <th>Category Name</th>
                             <th>Status</th>
                             <th>Meta Title</th>
                             <th>Meta Tage</th>
@@ -48,13 +46,21 @@
                                 <div class="d-flex align-items-center">
                                     <img src="{{ asset('uploads/Subcategory/'.$subcategory->photo) }}" class="img-fluid rounded avatar-50 mr-3" alt="image">
                                     <div>
-                                        Organic Cream
-                                        <p class="mb-0"><small>This is test Product</small></p>
+                                        {{ $subcategory->name }}
                                     </div>
                                 </div>
                             </td>
-                            <td>CREM01</td>
-                            <td>Beauty</td>
+                            <td>{{ $subcategory->rel_to_category->name }}</td>
+                            <td>{{ $subcategory->meta_title }}</td>
+                            <td>{{ $subcategory->meta_tags }}</td>
+                            <td>{{ $subcategory->meta_descp }}</td>
+                            <td>
+                                @if($subcategory->status == 1)
+                                    Active
+                                @else
+                                    Deactive
+                                @endif
+                            </td>
                             <td>
                                 <div class="d-flex align-items-center list-action">
                                     <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"

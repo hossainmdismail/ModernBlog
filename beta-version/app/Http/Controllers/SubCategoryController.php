@@ -94,7 +94,7 @@ class SubCategoryController extends Controller
             Photo::delete('uploads/Subcategory',$file); //Deleteing Photo
             Photo::upload($request->photo ,'uploads/Subcategory','CAT',['500','500']); //Upload new Photo
         }
-
+        
         Sub_Category::find($id)->update([
             'category_id'   =>$request->category_id,
             'name'          => $request->name,

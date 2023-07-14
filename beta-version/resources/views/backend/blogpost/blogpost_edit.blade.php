@@ -29,7 +29,6 @@
                                             @foreach ($categorys as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
-
                                         </select>
                                     </div>
                                 </div>
@@ -40,7 +39,6 @@
                                             @foreach ($subcategorys as $subcategory)
                                                 <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                                             @endforeach
-
                                         </select>
                                     </div>
                                 </div>

@@ -25,6 +25,9 @@ class Blog_Posts extends Model
     function rel_to_cat(){
         return $this->belongsTo(Category::class, 'category_id');
     }
+    function rel_to_subcat(){
+        return $this->belongsTo(Sub_Category::class, 'sub_category_id');
+    }
     function rel_to_user(){
         return $this->belongsTo(User::class, 'user_id');
     }

@@ -16,4 +16,9 @@ class Sub_Category extends Model
         'meta_tags',
         'meta_descp',
     ];
+
+    // category relation
+    function rel_to_category(){
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 }
