@@ -13,31 +13,26 @@
                         <a href="{{ route('blogpost.index') }}" class="btn btn-primary add-list"><i class="fa-solid fa-list-ul" style="color: #ffffff;"></i>List</a>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('blogpost.store') }}"  method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('blogpost.update', $blog_post->id) }}"  method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>User Id *</label>
-                                        <input type="hidden" name="name">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Category Id *</label>
+                                        <label>Category *</label>
                                         <select name="category_id" class="selectpicker form-control @error('name') is-invalid @enderror" data-style="py-0">
                                             @foreach ($categorys as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                <option value="{{ $category->id }}"{{ $category->id == $blog_post->category_id?'selectd':'' }}>{{ $category->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Sub Category Id *</label>
+                                        <label>Sub Category *</label>
                                         <select name="sub_category_id" class="selectpicker form-control @error('name') is-invalid @enderror" data-style="py-0">
                                             @foreach ($subcategorys as $subcategory)
-                                                <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
+                                                <option value="{{ $subcategory->id }}" {{ $subcategory->id == $blog_post->sub_category_id?'selectd':'' }}>{{ $subcategory->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -45,33 +40,43 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Title *</label>
-                                        <input type="text" name="title" class="form-control @error('name') is-invalid @enderror" placeholder="Title" value="{{ old('name') }}">
+                                        <input type="text" name="title" class="form-control" placeholder="Title" value="{{ $blog_post->title }}">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
+
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Photo</label>
-                                        <input type="file" class="form-control image-file @error('name') is-invalid @enderror" name="photo" accept="image/*">
+                                        <input type="file" class="form-control image-file " name="photo" accept="image/*">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Content *</label>
-                                        <select name="content" class="selectpicker form-control @error('name') is-invalid @enderror" data-style="py-0">
-                                            <option>Beauty</option>
-                                            <option>Grocery</option>
-
-                                        </select>
+                                        <input type="text" name="content" class="form-control" placeholder="Content" value="{{ $blog_post->content }}">
+                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Premium *</label>
-                                        <input type="text" name="premium" class="form-control @error('name') is-invalid @enderror" placeholder="Premium" required>
-                                        <div class="help-block with-errors"></div>
+                                        <select name="premium" class="selectpicker form-control" data-style="py-0" >
+                                            <option value="free" {{ $blog_post->free == 'premium'? 'selected':''}}>Free</option>
+                                            <option value="premium" {{ $blog_post->premium == 'premium'? 'selected':''}}>Premium</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Status *</label>
+                                        <select name="status" class="selectpicker form-control" data-style="py-0" value="{{ $blog_post->status }}">
+                                            <option value="1"{{ $blog_post->status == '1'? 'selected':''}}>Active</option>
+                                            <option value="0"{{ $blog_post->status == '0'? 'selected':''}}>Deactive</option>
+                                        </select>
                                     </div>
                                 </div>
 

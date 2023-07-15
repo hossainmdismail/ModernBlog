@@ -36,7 +36,7 @@ Auth::routes();
 
 //========= BackEnd Controllers =========//
 Route::group(['middleware' => ['checkRole:5', 'auth']], function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/index', [HomeController::class, 'index'])->name('index');
     Route::resources([
         'category'      => CategoryController::class,
         'subcategory'   => SubCategoryController::class,

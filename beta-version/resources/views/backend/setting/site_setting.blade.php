@@ -34,7 +34,6 @@
                                         <input type="file" class="form-control image-file @error('site_fav') is-invalid @enderror" name="site_fav" accept="image/*">
                                     </div>
                                 </div>
-
                                 <hr>
 
                                 <div class="col-md-6">
@@ -51,6 +50,14 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Meta Description *</label>
+                                        <textarea name="meta_descp" class="form-control @error('meta_descp') is-invalid @enderror" placeholder="Meta Description" id="" cols="80" rows="4"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status *</label>
@@ -58,13 +65,6 @@
                                             <option value="1">Active</option>
                                             <option value="0">Deactive</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Meta Description *</label>
-                                        <textarea name="meta_descp" class="form-control @error('meta_descp') is-invalid @enderror" placeholder="Meta Description" id="" cols="80" rows="4"></textarea>
-                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
 

@@ -45,14 +45,14 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Meta Title *</label>
-                                        <input type="text" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" placeholder="Meta Title" value="{{ $sub_cat->meta_title }}" required>
+                                        <input type="text" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" placeholder="Meta Title" value="{{ $sub_cat->meta_title }}" >
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Meta Tage *</label>
-                                        <input type="text" name="meta_tags" class="form-control @error('meta_tags') is-invalid @enderror" placeholder="Meta Tage" value="{{ $sub_cat->meta_tags }}" required>
+                                        <input type="text" name="meta_tags" class="form-control @error('meta_tags') is-invalid @enderror" placeholder="Meta Tage" value="{{ $sub_cat->meta_tags }}" >
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>

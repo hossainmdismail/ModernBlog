@@ -17,12 +17,6 @@
                 <table class="data-table mb-0 tbl-server-info">
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
-                            <th>
-                                <div class="checkbox d-inline-block">
-                                    <input type="checkbox" class="checkbox-input" id="checkbox1">
-                                    <label for="checkbox1" class="mb-0"></label>
-                                </div>
-                            </th>
                             {{-- <th>Photo</th> --}}
                             <th>Category Name</th>
                             <th>Meta Title</th>
@@ -35,12 +29,6 @@
                     <tbody class="ligth-body">
                         @foreach ($categorys as $category)
                             <tr>
-                                <td>
-                                    <div class="checkbox d-inline-block">
-                                        <input type="checkbox" class="checkbox-input" id="checkbox2">
-                                        <label for="checkbox2" class="mb-0"></label>
-                                    </div>
-                                </td>
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <img src="{{ asset('uploads/Category') }}/{{ $category->photo }}" class="img-fluid rounded avatar-50 mr-3" alt="image">

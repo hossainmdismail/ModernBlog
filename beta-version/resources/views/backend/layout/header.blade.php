@@ -78,7 +78,7 @@
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="../assets/images/user/01.jpg" alt="01">
+                                                            src="{{ asset('backend_assets') }}/images/user/01.jpg" alt="01">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -93,7 +93,7 @@
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="../assets/images/user/02.jpg" alt="02">
+                                                            src="{{ asset('backend_assets') }}/images/user/02.jpg" alt="02">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -108,7 +108,7 @@
                                                 <div class="media align-items-center cust-card py-3">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="../assets/images/user/03.jpg" alt="03">
+                                                            src="{{ asset('backend_assets') }}/images/user/03.jpg" alt="03">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -153,7 +153,7 @@
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="../assets/images/user/01.jpg" alt="01">
+                                                            src="{{ asset('backend_assets') }}/images/user/01.jpg" alt="01">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -168,7 +168,7 @@
                                                 <div class="media align-items-center cust-card py-3 border-bottom">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="../assets/images/user/02.jpg" alt="02">
+                                                            src="{{ asset('backend_assets') }}/images/user/02.jpg" alt="02">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
@@ -183,7 +183,7 @@
                                                 <div class="media align-items-center cust-card py-3">
                                                     <div class="">
                                                         <img class="avatar-50 rounded-small"
-                                                            src="../assets/images/user/03.jpg" alt="03">
+                                                            src="{{ asset('backend_assets') }}/images/user/03.jpg" alt="03">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <div class="d-flex align-items-center justify-content-between">
