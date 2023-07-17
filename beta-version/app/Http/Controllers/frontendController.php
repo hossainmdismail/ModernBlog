@@ -14,28 +14,28 @@ class frontendController extends Controller
     //========== home =============//
     function home(){
         //Premium recent
-        $premiumRecent = Blog_Posts::select('id','title','photo','created_at')
+        $premiumRecent = Blog_Posts::select('id','slug','title','photo','created_at')
         ->where('premium', 'premium')
         ->where('status',1)
         ->orderBy('id','DESC')
         ->get()
         ->take(4);
         //premiumTop
-        $premiumTop = Blog_Posts::select('id','title','photo','created_at')
+        $premiumTop = Blog_Posts::select('id','slug','title','photo','created_at')
         ->where('premium', 'premium')
         ->where('status',1)
         ->orderBy('views','DESC')
         ->get()
         ->take(3);
         //popular
-        $popular = Blog_Posts::select('id','title','photo','created_at')
+        $popular = Blog_Posts::select('id','slug','title','photo','created_at')
         ->where('premium', 'free')
         ->where('status',1)
         ->orderBy('views','DESC')
         ->get()
         ->take(4);
         //popular
-        $recent = Blog_Posts::select('id','title','photo','category_id','user_id','created_at')
+        $recent = Blog_Posts::select('id','slug','title','photo','category_id','user_id','created_at')
         ->where('premium', 'free')
         ->where('status',1)
         ->orderBy('id','DESC')
@@ -85,9 +85,9 @@ class frontendController extends Controller
     }
 
     // =========== single_blog ============//
-    function single_blog($id){
-        $vv = null;
-        if (Blog_Posts::find($id)->premium != 'free') { //checking premium
+    function single_blog($slug){
+        $id = Blog_Posts::where('slug',$slug)->first()->id;
+        if (Blog_Posts::where('slug',$slug)->first()->premium != 'free') { //checking premium
             if (Auth::check()) { //Checking if user login
                 if (Subscriptions::where('user_id',Auth::user()->id)->exists()) {
                     $subscription_date = Subscriptions::select('end_date')->where('user_id',Auth::user()->id)->first()->end_date;
@@ -96,7 +96,7 @@ class frontendController extends Controller
                         Alert::toast('Your Subscription Date has Expired','error');
                         return redirect()->route('subscription'); //Redirect with alert message if user subscription date expired
                     }else { //Give permission to user
-                        $single_blogs = Blog_Posts::find($id);
+                        $single_blogs = Blog_Posts::where('slug',$slug)->first();
                         $category = Category::select('id','name')->get();
 
                         $key = 'Blog_'.$single_blogs->id;
@@ -117,7 +117,7 @@ class frontendController extends Controller
                 return redirect()->route('subscription'); //Redirect if not an user
             }
         }else{ //checking free blog
-            $single_blogs = Blog_Posts::find($id);
+            $single_blogs = Blog_Posts::where('slug',$slug)->first();
             $category = Category::select('id','name')->get();
 
             $key = 'Blog_'.$single_blogs->id;

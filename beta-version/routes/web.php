@@ -54,7 +54,7 @@ Route::get('/about', [frontendController::class, 'about'])->name('about');
 Route::get('/contact', [frontendController::class, 'contact'])->name('contact');
 Route::get('/category/post/{id}', [frontendController::class, 'category_post'])->name('category.post');
 Route::get('/blogs', [frontendController::class, 'blogs'])->name('blogs');
-Route::get('/single/blog/{id}', [frontendController::class, 'single_blog'])->name('single.blog');
+Route::get('/single/blog/{slug}', [frontendController::class, 'single_blog'])->name('single.blog');
 Route::post('user/login', [frontendController::class, 'login'])->name('user.login');
 
 //========== Ajax ==========//

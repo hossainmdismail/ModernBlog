@@ -16,13 +16,13 @@
                         <div class="post featured-post-lg">
                             <div class="details clearfix">
                                 <a href="category.html" class="category-badge">{{ $recent->rel_to_cat->name }}</a>
-                                <h2 class="post-title"><a href="blog-single.html">{{ $recent->title }}</a></h2>
+                                <h2 class="post-title"><a href="{{ route('single.blog',$recent->slug) }}">{{ $recent->title }}</a></h2>
                                 <ul class="meta list-inline mb-0">
                                     <li class="list-inline-item"><a href="#">{{ $recent->rel_to_user->name }}</a></li>
-                                    <li class="list-inline-item">29 March 2021</li>
+                                    <li class="list-inline-item">{{ $recent->created_at->format('d F Y') }}</li>
                                 </ul>
                             </div>
-                            <a href="blog-single.html">
+                            <a href="{{ route('single.blog',$recent->slug) }}">
                                 <div class="thumb rounded">
                                     <div class="inner data-bg-image" data-bg-image="{{ asset('uploads/blog/'.$recent->photo) }}"></div>
                                 </div>
@@ -49,14 +49,14 @@
                             @foreach ($populars as $popular)
                                 <div class="post post-list-sm circle">
                                     <div class="thumb circle">
-                                        <a href="{{ route('single.blog',$popular->id) }}">
+                                        <a href="{{ route('single.blog',$popular->slug) }}">
                                             <div class="inner">
                                                 <img src="{{ asset('uploads/blog/'.$popular->photo) }}" alt="post-title" />
                                             </div>
                                         </a>
                                     </div>
                                     <div class="details clearfix">
-                                        <h6 class="post-title my-0"><a href="{{ route('single.blog',$popular->id) }}">{{ $popular->title }}</a></h6>
+                                        <h6 class="post-title my-0"><a href="{{ route('single.blog',$popular->slug) }}">{{ $popular->title }}</a></h6>
                                         <ul class="meta list-inline mt-1 mb-0">
                                             <li class="list-inline-item">{{ $popular->created_at->format('d F Y') }}</li>
                                         </ul>
@@ -70,14 +70,14 @@
                                 <!-- post -->
                                 <div class="post post-list-sm circle">
                                     <div class="thumb circle">
-                                        <a href="{{ route('single.blog',$premium->id) }}">
+                                        <a href="{{ route('single.blog',$premium->slug) }}">
                                             <div class="inner">
                                                 <img src="{{ asset('uploads/blog/'.$premium->photo) }}" alt="post-title" />
                                             </div>
                                         </a>
                                     </div>
                                     <div class="details clearfix">
-                                        <h6 class="post-title my-0"><a href="{{ route('single.blog',$premium->id) }}">{{ $premium->title }}</a></h6>
+                                        <h6 class="post-title my-0"><a href="{{ route('single.blog',$premium->slug) }}">{{ $premium->title }}</a></h6>
                                         <ul class="meta list-inline mt-1 mb-0">
                                             <li class="list-inline-item"><span class="premium_pill">Premium</span> {{ $premium->created_at->format('d F Y') }}</li>
                                         </ul>
@@ -654,7 +654,7 @@
                                     <div class="details clearfix">
                                         <h6 class="post-title my-0"><a href="blog-single.html">{{ $premiumTop->title }}</a></h6>
                                         <ul class="meta list-inline mt-1 mb-0">
-                                            <li class="list-inline-item">29 March 2021</li>
+                                            <li class="list-inline-item"><span class="premium_pill">Premium</span>{{ $premium->created_at->format('d F Y') }}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -709,13 +709,13 @@
                                     <div class="post post-carousel">
                                         <div class="thumb rounded">
                                             <a href="{{ route('category.post',$trending->rel_to_cat->id) }}" class="category-badge position-absolute">{{ $trending->rel_to_cat->name }}</a>
-                                            <a href="{{ route('single.blog',$trending->id) }}">
+                                            <a href="{{ route('single.blog',$trending->slug) }}">
                                                 <div class="inner">
                                                     <img src="{{ asset('uploads/blog/'.$trending->photo) }}" alt="post-title" />
                                                 </div>
                                             </a>
                                         </div>
-                                        <h5 class="post-title mb-0 mt-4"><a href="{{ route('single.blog',$trending->id) }}">{{ $trending->title }}</a></h5>
+                                        <h5 class="post-title mb-0 mt-4"><a href="{{ route('single.blog',$trending->slug) }}">{{ $trending->title }}</a></h5>
                                         <ul class="meta list-inline mt-2 mb-0">
                                             @if ($trending->premium == 'premium')<li class="list-inline-item"> <span class="premium_pill">Premium</span></li> @endif
                                             <li class="list-inline-item">{{ $trending->created_at->format('d F Y') }}</li>

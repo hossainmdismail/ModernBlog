@@ -32,7 +32,7 @@
                             <div class="thumb top-rounded">
                                 @if ($blog->premium == 'premium') <a href="#" class="category-badge position-absolute">Premium</a> @endif
 
-                                <a href="{{ route('single.blog',$blog->id) }}">
+                                <a href="{{ route('single.blog',$blog->slug) }}">
                                     <div class="inner">
                                         <img src="{{ asset('uploads/Category') }}/{{ $blog->rel_to_cat->photo }}" alt="post-title" />
                                     </div>
@@ -43,18 +43,34 @@
                                     <li class="list-inline-item"><a href="#">{{ $blog->rel_to_cat->name }}</a></li>
                                     <li class="list-inline-item">{{ $blog->created_at->format('d-F-Y') }}</li>
                                 </ul>
-                                <h5 class="post-title mb-3 mt-3"><a href="{{ route('single.blog',$blog->id) }}">{{ $blog->title }}</a></h5>
+                                <h5 class="post-title mb-3 mt-3"><a href="{{ route('single.blog',$blog->slug) }}">{{ $blog->title }}</a></h5>
                             </div>
                             <div class="post-bottom clearfix d-flex align-items-center">
                                 <div class="social-share me-auto">
                                     <button class="toggle-button icon-share"></button>
                                     <ul class="icons list-unstyled list-inline mb-0">
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a></li>
+                                        <li class="list-inline-item">
+                                            <a href="https://www.facebook.com/dialog/send?app_id=YOUR_APP_ID&amp;link={{ urlencode(route('single.blog',$blog->slug)) }}&amp;redirect_uri=REDIRECT_URL" target="_blank">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://twitter.com/intent/tweet?text={{ urlencode($blog->title) }}&amp;url={{ urlencode(route('single.blog',$blog->slug)) }}" target="_blank">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="http://www.linkedin.com/shareArticle?mini=true&url={{ route('single.blog',$blog->slug) }}" target="_blank">
+                                            <i class="fab fa-linkedin-in"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://t.me/share/url?url={{ urlencode(route('single.blog',$blog->slug)) }}&text={{ urlencode($blog->title) }}" target="_blank">
+                                            <i class="fab fa-telegram-plane"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="mailto:?body=Check out this blog post: {{ rawurlencode(route('single.blog',$blog->slug)) }}" target="_blank">
+                                            <i class="far fa-envelope"></i></a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="more-button float-end">
@@ -95,14 +111,14 @@
                                 <div class="post post-list-sm circle">
                                     <div class="thumb circle">
                                         <span class="number">{{ $key+1 }}</span>
-                                        <a href="{{ route('single.blog',$popular->id) }}">
+                                        <a href="{{ route('single.blog',$popular->slug) }}">
                                             <div class="inner">
                                                 <img src="{{ asset('uploads/blog/'.$popular->photo) }}" alt="post-title" />
                                             </div>
                                         </a>
                                     </div>
                                     <div class="details clearfix">
-                                        <h6 class="post-title my-0"><a href="{{ route('single.blog',$popular->id) }}">{{ $popular->title }}</a></h6>
+                                        <h6 class="post-title my-0"><a href="{{ route('single.blog',$popular->slug) }}">{{ $popular->title }}</a></h6>
                                         <ul class="meta list-inline mt-1 mb-0">
                                             <li class="list-inline-item">{{ $popular->created_at->format('d F Y') }}</li>
                                         </ul>
@@ -161,13 +177,13 @@
                                     <div class="post post-carousel">
                                         <div class="thumb rounded">
                                             <a href="{{ route('category.post',$trending->rel_to_cat->id) }}" class="category-badge position-absolute">{{ $trending->rel_to_cat->name }}</a>
-                                            <a href="{{ route('single.blog',$trending->id) }}">
+                                            <a href="{{ route('single.blog',$trending->slug) }}">
                                                 <div class="inner">
                                                     <img src="{{ asset('uploads/blog/'.$trending->photo) }}" alt="post-title" />
                                                 </div>
                                             </a>
                                         </div>
-                                        <h5 class="post-title mb-0 mt-4"><a href="{{ route('single.blog',$trending->id) }}">{{ $trending->title }}</a></h5>
+                                        <h5 class="post-title mb-0 mt-4"><a href="{{ route('single.blog',$trending->slug) }}">{{ $trending->title }}</a></h5>
                                         <ul class="meta list-inline mt-2 mb-0">
                                             @if ($trending->premium == 'premium')<li class="list-inline-item"> <span class="premium_pill">Premium</span></li> @endif
                                             <li class="list-inline-item">{{ $trending->created_at->format('d F Y') }}</li>

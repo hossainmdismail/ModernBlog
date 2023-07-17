@@ -79,7 +79,7 @@ class BlogPostController extends Controller
             'sub_category_id'   => $request->sub_category_id,
             'premium'           => $request->blog_type,
             'title'             => $request->title,
-            'slug'             => Str::slug($request->title),
+            'slug'              => Str::slug($request->title),
             'photo'             => Photo::$name,
             'content'           => $request->content,
             'created_at'        => Carbon::now(),

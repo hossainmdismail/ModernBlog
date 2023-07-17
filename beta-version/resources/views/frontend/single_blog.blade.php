@@ -325,13 +325,13 @@
                                     <div class="post post-carousel">
                                         <div class="thumb rounded">
                                             <a href="{{ route('category.post',$trending->rel_to_cat->id) }}" class="category-badge position-absolute">{{ $trending->rel_to_cat->name }}</a>
-                                            <a href="{{ route('single.blog',$trending->id) }}">
+                                            <a href="{{ route('single.blog',$trending->slug) }}">
                                                 <div class="inner">
                                                     <img src="{{ asset('uploads/blog/'.$trending->photo) }}" alt="post-title" />
                                                 </div>
                                             </a>
                                         </div>
-                                        <h5 class="post-title mb-0 mt-4"><a href="{{ route('single.blog',$trending->id) }}">{{ $trending->title }}</a></h5>
+                                        <h5 class="post-title mb-0 mt-4"><a href="{{ route('single.blog',$trending->slug) }}">{{ $trending->title }}</a></h5>
                                         <ul class="meta list-inline mt-2 mb-0">
                                             @if ($trending->premium == 'premium')<li class="list-inline-item"> <span class="premium_pill">Premium</span></li> @endif
                                             <li class="list-inline-item">{{ $trending->created_at->format('d F Y') }}</li>
