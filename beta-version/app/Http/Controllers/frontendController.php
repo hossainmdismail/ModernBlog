@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog_Posts;
 use App\Models\Category;
+use App\Models\setting;
 use App\Models\Subscriptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,7 +63,8 @@ class frontendController extends Controller
 
     // =========== contact ============//
     function contact(){
-        return view('frontend.contact');
+        return view('frontend.contact', [
+        ]);
     }
 
     // =========== category ============//

@@ -17,12 +17,6 @@
                 <table class="data-table mb-0 tbl-server-info">
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
-                            <th>
-                                <div class="checkbox d-inline-block">
-                                    <input type="checkbox" class="checkbox-input" id="checkbox1">
-                                    <label for="checkbox1" class="mb-0"></label>
-                                </div>
-                            </th>
                             <th>User</th>
                             <th>Category</th>
                             <th>Sub Category</th>
@@ -37,12 +31,6 @@
                     <tbody class="ligth-body">
                         @foreach ($blogposts as $blogpost)
                             <tr>
-                                <td>
-                                    <div class="checkbox d-inline-block">
-                                        <input type="checkbox" class="checkbox-input" id="checkbox2">
-                                        <label for="checkbox2" class="mb-0"></label>
-                                    </div>
-                                </td>
                                 <td>{{ $blogpost->rel_to_user->name }}</td>
                                 <td>{{ $blogpost->rel_to_cat->name }}</td>
                                 <td>{{ $blogpost->rel_to_subcat->name }}</td>
@@ -68,8 +56,13 @@
                                             href="#"><i class="ri-eye-line mr-0"></i></a>
                                         <a class="badge bg-success mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"
                                             href="{{ route('blogpost.edit', $blogpost->id) }}"><i class="ri-pencil-line mr-0"></i></a>
-                                        <a class="badge bg-warning mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"
-                                            href="#"><i class="ri-delete-bin-line mr-0"></i></a>
+                                            <form action="{{ route('blogpost.destroy', $blogpost->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="badge bg-warning border-0 mr-2">
+                                                    <i class="ri-delete-bin-line mr-0"></i>
+                                                </button>
+                                            </form>
                                     </div>
                                 </td>
                             </tr>

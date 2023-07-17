@@ -109,9 +109,12 @@ class BlogPostController extends Controller
      */
     public function edit(string $id)
     {
+        $blog_post = Blog_Posts::find($id);
+
         $categorys  = Category::all();
         $subcategorys  = Sub_Category::all();
         return view('backend.blogpost.blogpost_edit', [
+            'blog_post'=>$blog_post,
             'categorys'=>$categorys,
             'subcategorys'=>$subcategorys,
         ]);
@@ -122,7 +125,24 @@ class BlogPostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // print_r($request->all());
+        // die();
+        $file = Blog_Posts::find($id)->photo; //Getting the name of photo
+        if (file_exists($request->photo)) {
+            Photo::delete('uploads/blog',$file); //Deleteing Photo
+            Photo::upload($request->photo ,'uploads/blog','CAT',['500','500']); //Upload new Photo
+        }
+
+        Blog_Posts::find($id)->update([
+            'category_id'   =>$request->category_id,
+            'sub_category_id'   =>$request->sub_category_id,
+            'title'          => $request->title,
+            'photo'         => (file_exists($request->photo)?Photo::$name : $file), //ternary operator | replace or update photo
+            'content'    => $request->content,
+            'premium'     => $request->premium,
+            'status'    => $request->status,
+        ]);
+        return redirect()->route('blogpost.index')->with('succ','Blog Post Successfully Updated');
     }
 
     /**
@@ -130,6 +150,12 @@ class BlogPostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //Deleting Photo
+        $file = Blog_Posts::find($id)->photo;
+        Photo::delete('uploads/blog',$file);
+
+        //Deleting Item
+        $data = Blog_Posts::find($id)->delete();
+        return back()->with('succ', 'Item Deleted');
     }
 }

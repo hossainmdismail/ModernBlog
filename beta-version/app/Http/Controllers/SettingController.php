@@ -8,6 +8,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Photo;
+use Str;
+use Image;
 
 class SettingController extends Controller
 {
@@ -27,12 +29,21 @@ class SettingController extends Controller
             'meta_descp'    => 'required',
         ]);
 
-        Photo::upload($request->site_logo ,'uploads/setting','set',['500','500']);
-        Photo::upload($request->site_fav ,'uploads/setting','set',['500','500']);
+        // logo
+        $image = $request->site_logo;
+        $extension = $image->getClientOriginalExtension();
+        $file_name = Str::random(5). rand(1000,999999).'.'.$extension;
+        Image::make($image)->resize(300, 200)->save(public_path('uploads/setting/'.$file_name));
+
+        // fav
+        $fav = $request->site_fav;
+        $extension = $fav->getClientOriginalExtension();
+        $fav_name = Str::random(5). rand(1000,999999).'.'.$extension;
+        Image::make($fav)->resize(300, 200)->save(public_path('uploads/setting/'.$fav_name));
         setting::insert([
-            'site_name'     => $request->name,
-            'site_logo'     => Photo::$name,
-            'site_fav'      => Photo::$name,
+            'site_name'     => $request->site_name,
+            'site_logo'     => $file_name,
+            'site_fav'      => $fav_name,
             'meta_title'    => $request->meta_title,
             'meta_tags'     => $request->meta_tags,
             'meta_descp'    => $request->meta_descp,

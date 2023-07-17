@@ -10,6 +10,8 @@
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li><a href="{{ url('/') }}">Home</a></li><span style="margin: 0px 6px 0px 6px">/</span>
                     <li>{{ $categorys->name }}</li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ $categorys->name }}</li>
                 </ol>
             </nav>
         </div>
@@ -19,11 +21,8 @@
 <!-- section main content -->
 <section class="main-content">
     <div class="container-xl">
-
         <div class="row gy-4">
-
             <div class="col-lg-8">
-
                 <div class="row gy-4">
                     @foreach ($blog_post as $blog)
                     <div class="col-sm-6">

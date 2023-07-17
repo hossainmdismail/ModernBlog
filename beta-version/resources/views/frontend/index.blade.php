@@ -686,9 +686,10 @@
                         </div>
                         <div class="widget-content">
                             <span class="newsletter-headline text-center mb-3">Join 70,000 subscribers!</span>
-                            <form>
+                            <form action="{{ route('subscribe.store') }}" method="POST">
+                                @csrf
                                 <div class="mb-2">
-                                    <input class="form-control w-100 text-center" placeholder="Email address…" type="email">
+                                    <input class="form-control w-100 text-center" name="email" placeholder="Email address…" type="email">
                                 </div>
                                 <button class="btn btn-default btn-full" type="submit">Sign Up</button>
                             </form>

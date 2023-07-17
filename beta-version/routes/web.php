@@ -10,6 +10,8 @@ use App\Http\Controllers\PlansController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\subscribeControlloer;
+use App\Http\Controllers\ticketController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,13 +38,15 @@ Auth::routes();
 
 //========= BackEnd Controllers =========//
 Route::group(['middleware' => ['checkRole:5', 'auth']], function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/index', [HomeController::class, 'index'])->name('index');
     Route::resources([
         'category'      => CategoryController::class,
         'subcategory'   => SubCategoryController::class,
         'blogpost'      => BlogPostController::class,
         'member'        => Members::class,
         'plans'         => PlansController::class,
+        'subscribe'     => subscribeControlloer::class,
+        'ticket'        => ticketController::class,
     ]);
 });
 
