@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row mt-5">
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <div class="user_info px-5 py-3 border  rounded shadow">
                 <div class="user_header mb-4 mt-3">
                     <h3>My Information</h3>
@@ -17,7 +17,7 @@
 
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="user_post border  rounded shadow">

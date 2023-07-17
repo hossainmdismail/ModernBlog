@@ -153,6 +153,7 @@
 
     @yield('footer_script')
 
+    @include('sweetalert::alert')
     <script>
 
 

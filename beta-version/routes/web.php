@@ -10,6 +10,8 @@ use App\Http\Controllers\PlansController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\subscribeControlloer;
+use App\Http\Controllers\ticketController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +45,8 @@ Route::group(['middleware' => ['checkRole:5', 'auth']], function () {
         'blogpost'      => BlogPostController::class,
         'member'        => Members::class,
         'plans'         => PlansController::class,
+        'subscribe'     => subscribeControlloer::class,
+        'ticket'        => ticketController::class,
     ]);
 });
 

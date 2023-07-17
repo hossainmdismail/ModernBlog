@@ -7,7 +7,6 @@
                 <span id="currentTime"></span>
             </span>
 
-
             <!-- header right section -->
             <div class="header-right">
                 <!-- social icons -->

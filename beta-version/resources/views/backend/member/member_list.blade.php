@@ -17,12 +17,7 @@
                 <table class="data-table mb-0 tbl-server-info">
                     <thead class="bg-white text-uppercase">
                         <tr class="ligth ligth-data">
-                            <th>
-                                <div class="checkbox d-inline-block">
-                                    <input type="checkbox" class="checkbox-input" id="checkbox1">
-                                    <label for="checkbox1" class="mb-0"></label>
-                                </div>
-                            </th>
+
                             {{-- <th>Photo</th> --}}
                             <th>Name</th>
                             <th>Role</th>
@@ -33,12 +28,7 @@
                     <tbody class="ligth-body">
                          @foreach ($data as $datas)
                             <tr>
-                                <td>
-                                    <div class="checkbox d-inline-block">
-                                        <input type="checkbox" class="checkbox-input" id="checkbox2">
-                                        <label for="checkbox2" class="mb-0"></label>
-                                    </div>
-                                </td>
+                                
                                 <td>{{$datas->name}}</td>
                                 <td>
                                     @php
