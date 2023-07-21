@@ -1,7 +1,7 @@
 # Subscriptions Blog System Website
 
 <div align="center">
-    ![Logo](https://raw.githubusercontent.com/hossainmdismail/ModernBlog/main/beta-version/public/settings/e-blogger.png?token=GHSAT0AAAAAACE3RJ2PEZ56Q5YWOBWYIZ2UZF2FYEA)
+    ![Logo](https:ibb.co/qBmgC47)
 </div>
 
 Welcome to our Subscriptions Blog System Website, a platform designed to empower content creators and readers alike. Our website offers a feature-rich blogging experience with a subscription-based model, allowing creators to share exclusive content while rewarding their loyal subscribers.
