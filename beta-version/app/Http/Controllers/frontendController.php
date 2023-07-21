@@ -47,6 +47,17 @@ class frontendController extends Controller
         ->where('status',1)
         ->orderBy('heart','DESC')
         ->get();
+        //Trending Post
+        $trending = Blog_Posts::select('id','slug','title','photo','category_id','premium','user_id','created_at')
+        ->where('status',1)
+        ->orderBy('views','DESC')
+        ->orderBy('heart','DESC')
+        ->get();
+        //Latest Post
+        $latest = Blog_Posts::select('id','slug','title','photo','category_id','premium','user_id','created_at')
+        ->where('status',1)
+        ->orderBy('id','DESC')
+        ->get();
 
         // category
         $categorys = Category::all();
@@ -58,6 +69,8 @@ class frontendController extends Controller
             'recents'=>$recent,
             'userChoice'=>$userChoice,
             'categorys'=>$categorys,
+            'trendings'=>$trending,
+            'latests'=>$latest,
         ]);
     }
 

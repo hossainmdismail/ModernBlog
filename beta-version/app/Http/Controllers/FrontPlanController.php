@@ -6,6 +6,7 @@ use App\Models\Plans;
 use App\Models\Subscriptions;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontPlanController extends Controller
 {
@@ -17,11 +18,22 @@ class FrontPlanController extends Controller
 
     //============= subscription_pay ================
     function subscription_pay($id){
+        $data = ['plan' => $id];
         $plan = Plans::find($id);
-        return view('frontend.layouts.subscription_pay',['plan'=>$plan]);
+        if (Auth::check()) {
+            return redirect()->route('stripe.link',['data'=>$data]);
+        }else{
+            return view('frontend.layouts.subscription_pay',['plan'=>$plan]);
+        }
     }
 
     function subscription_checkout(Request $request){
+        if (Auth::check()) {
+            echo Auth::user()->id;
+        }else{
+            echo 'Not Logged in';
+        }
+        die();
         $request->validate([
             'plan' => 'required|integer',
             'name' => 'required|string',
