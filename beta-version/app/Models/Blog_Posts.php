@@ -18,6 +18,7 @@ class Blog_Posts extends Model
         'photo',
         'content',
         'views',
+        'heart',
         'premium',
         'status',
     ];

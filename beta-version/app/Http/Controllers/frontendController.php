@@ -42,6 +42,11 @@ class frontendController extends Controller
         ->orderBy('id','DESC')
         ->get()
         ->take(4);
+        //User Choice
+        $userChoice = Blog_Posts::select('id','slug','title','photo','category_id','premium','user_id','created_at')
+        ->where('status',1)
+        ->orderBy('heart','DESC')
+        ->get();
 
         // category
         $categorys = Category::all();
@@ -51,6 +56,7 @@ class frontendController extends Controller
             'premiumTops'=>$premiumTop,
             'populars'=>$popular,
             'recents'=>$recent,
+            'userChoice'=>$userChoice,
             'categorys'=>$categorys,
         ]);
     }
@@ -72,8 +78,8 @@ class frontendController extends Controller
         $categorys = Category::find($id);
         $blog_post = Blog_Posts::where('category_id', $id)->get();
         return view('frontend.category', [
-            'categorys'=>$categorys,
-            'blog_post'=>$blog_post,
+            'categorys' => $categorys,
+            'blog_post' => $blog_post,
         ]);
     }
 
@@ -145,18 +151,11 @@ class frontendController extends Controller
             Alert::toast('Success Toast','error');
             return back();
         }
-
-        // print_r($request->all());
-        // $request->validate([
-        //     'email'         => 'required|email',
-        //     'password'      => 'required',
-        // ]);
-
     }
 
-        //========== user profile =============//
-        function user_profile(){
-            return view('frontend.profile');
-        }
+    //========== user profile =============//
+    function user_profile(){
+         return view('frontend.profile');
+    }
 
 }
