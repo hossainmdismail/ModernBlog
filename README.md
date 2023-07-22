@@ -1,7 +1,7 @@
 # Subscriptions Blog System Website
 
 <div align="center">
-    <img src="https://ibb.co/qBmgC47" alt="EK">
+    <img src="https://i.ibb.co/K6VsDQb/fav.png" alt="EK">
 </div>
 
 Welcome to our Subscriptions Blog System Website, a platform designed to empower content creators and readers alike. Our website offers a feature-rich blogging experience with a subscription-based model, allowing creators to share exclusive content while rewarding their loyal subscribers.
