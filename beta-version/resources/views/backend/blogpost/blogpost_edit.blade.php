@@ -54,14 +54,6 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Content *</label>
-                                        <input type="text" name="content" class="form-control" placeholder="Content" value="{{ $blog_post->content }}">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="form-group">
                                         <label>Premium *</label>
                                         <select name="premium" class="selectpicker form-control" data-style="py-0" >
                                             <option value="free" {{ $blog_post->free == 'premium'? 'selected':''}}>Free</option>

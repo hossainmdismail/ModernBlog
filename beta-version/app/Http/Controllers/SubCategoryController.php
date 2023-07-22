@@ -60,15 +60,6 @@ class SubCategoryController extends Controller
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-        echo 'show';
-
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -94,7 +85,7 @@ class SubCategoryController extends Controller
             Photo::delete('uploads/Subcategory',$file); //Deleteing Photo
             Photo::upload($request->photo ,'uploads/Subcategory','CAT',['500','500']); //Upload new Photo
         }
-        
+
         Sub_Category::find($id)->update([
             'category_id'   =>$request->category_id,
             'name'          => $request->name,

@@ -35,13 +35,13 @@ class FrontPlanController extends Controller
         }
         die();
         $request->validate([
-            'plan' => 'required|integer',
-            'name' => 'required|string',
-            'number' => 'required',
-            'address' => 'required|string',
-            'country' => 'required|string',
-            'email' => 'required|email',
-            'password' => 'required',
+            'plan'      => 'required|integer',
+            'name'      => 'required|string',
+            'number'    => 'required',
+            'address'   => 'required|string',
+            'country'   => 'required|string',
+            'email'     => 'required|email',
+            'password'  => 'required',
         ]);
 
         // should check if email exist

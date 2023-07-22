@@ -36,10 +36,10 @@ class PlansController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'name' => 'required|string',
-            'price' => 'required|integer',
-            'type' => 'required|string',
-            'duration' => 'required|integer',
+            'name'      => 'required|string',
+            'price'     => 'required|integer',
+            'type'      => 'required|string',
+            'duration'  => 'required|integer',
         ]);
 
         $plans = Plans::create($validate);
@@ -74,10 +74,10 @@ class PlansController extends Controller
     public function update(Request $request,$id)
     {
         $validate = $request->validate([
-            'name' => 'required|string',
-            'price' => 'required|integer',
-            'type' => 'required|string',
-            'duration' => 'required|integer',
+            'name'      => 'required|string',
+            'price'     => 'required|integer',
+            'type'      => 'required|string',
+            'duration'  => 'required|integer',
         ]);
 
         $find = Plans::find($id);

@@ -35,17 +35,17 @@ class ticketController extends Controller
                 '*'=>'required',
             ]);
             ticket::insert([
-                'user_id'=>Auth::user()->id,
-                'name'=>$request->name,
-                'email'=>$request->email,
-                'subject'=>$request->subject,
-                'message'=>$request->message,
+                'user_id'   =>Auth::user()->id,
+                'name'      =>$request->name,
+                'email'     =>$request->email,
+                'subject'   =>$request->subject,
+                'message'   =>$request->message,
                 'created_at'=>Carbon::now(),
             ]);
             return back();
         }
-       
-        
+
+
     }
 
     /**

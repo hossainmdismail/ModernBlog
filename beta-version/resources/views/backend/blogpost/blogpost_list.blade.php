@@ -22,7 +22,6 @@
                             <th>Sub Category</th>
                             <th>Photo</th>
                             <th>Title</th>
-                            <th>Content</th>
                             <th>Premium</th>
                             <th>Status</th>
                             <th>Action</th>
@@ -40,7 +39,6 @@
                                     </div>
                                 </td>
                                 <td>{{ $blogpost->title }}</td>
-                                <td>{{ $blogpost->content }}</td>
                                 <td>{{ $blogpost->premium }}</td>
 
                                 <td>

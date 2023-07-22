@@ -26,6 +26,6 @@ class HomeController extends Controller
         return view('backend.index');
     }
 
-    
+
 
 }

@@ -24,7 +24,7 @@ class BlogPostController extends Controller
         $blogposts  = Blog_Posts::all();
         $data       = Blog_Posts::where('status', 1)->get();
         return view('backend.blogpost.blogpost_list',[
-            'data' => $data,
+            'data'      => $data,
             'blogposts' => $blogposts,
         ]);
     }
@@ -35,11 +35,11 @@ class BlogPostController extends Controller
     public function create()
     {
 
-        $categorys  = Category::all();
-        $subcategorys  = Sub_Category::all();
+        $categorys      = Category::all();
+        $subcategorys   = Sub_Category::all();
         return view('backend.blogpost.blogpost_add', [
-            'categorys' => $categorys,
-            'subcategorys' => $subcategorys,
+            'categorys'     => $categorys,
+            'subcategorys'  => $subcategorys,
 
         ]);
     }
@@ -85,38 +85,30 @@ class BlogPostController extends Controller
             'created_at'        => Carbon::now(),
         ]);
         Post_Seo::insert([
-            'post_id'   => $post->id,
-            'meta_title' => $request->meta_title,
-            'meta_tags' => $request->meta_tags,
-            'meta_descp' => $request->meta_descp,
-            'created_at' => Carbon::now(),
+            'post_id'       => $post->id,
+            'meta_title'    => $request->meta_title,
+            'meta_tags'     => $request->meta_tags,
+            'meta_descp'    => $request->meta_descp,
+            'created_at'    => Carbon::now(),
         ]);
 
         Alert::toast('Successfully Added','success');
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        $blog_post = Blog_Posts::find($id);
-
-        $categorys  = Category::all();
-        $subcategorys  = Sub_Category::all();
+        $blog_post      = Blog_Posts::find($id);
+        $categorys      = Category::all();
+        $subcategorys   = Sub_Category::all();
         return view('backend.blogpost.blogpost_edit', [
-            'blog_post'=>$blog_post,
-            'categorys'=>$categorys,
-            'subcategorys'=>$subcategorys,
+            'blog_post'     =>$blog_post,
+            'categorys'     =>$categorys,
+            'subcategorys'  =>$subcategorys,
         ]);
     }
 
@@ -134,13 +126,12 @@ class BlogPostController extends Controller
         }
 
         Blog_Posts::find($id)->update([
-            'category_id'   =>$request->category_id,
+            'category_id'       =>$request->category_id,
             'sub_category_id'   =>$request->sub_category_id,
-            'title'          => $request->title,
-            'photo'         => (file_exists($request->photo)?Photo::$name : $file), //ternary operator | replace or update photo
-            'content'    => $request->content,
-            'premium'     => $request->premium,
-            'status'    => $request->status,
+            'title'             => $request->title,
+            'photo'             => (file_exists($request->photo)?Photo::$name : $file), //ternary operator | replace or update photo
+            'premium'           => $request->premium,
+            'status'            => $request->status,
         ]);
         return redirect()->route('blogpost.index')->with('succ','Blog Post Successfully Updated');
     }

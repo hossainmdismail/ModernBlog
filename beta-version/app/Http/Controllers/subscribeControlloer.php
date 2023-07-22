@@ -35,14 +35,11 @@ class subscribeControlloer extends Controller
             'email' =>'required',
         ]);
 
-        if(Auth::user()->id){
-            subscribe::insert([
-                'user_id'=>Auth::user()->id,
-                'email'=>$request->email,
-            ]);
-            return back();
-        }
-        
+        subscribe::insert([
+            'email'  => $request->email,
+        ]);
+        return back();
+
     }
 
     /**
