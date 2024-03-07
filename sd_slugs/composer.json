@@ -1,0 +1,28 @@
+{
+    "name": "khaalifa/sd_slugs",
+    "description": "uniqe slugs generatore",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Khaalifa\\SdSlugs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hossainmdismail9010",
+            "email": "hossainmdismail9010@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel":{
+            "providers":[
+                "khaalifa\\SdSlugs\\ServiceProviders"
+            ],
+            "aliases":{
+                "Debugbar": "khaalifa\\SdSlugs\\Facade"
+            }
+        }
+    }
+}

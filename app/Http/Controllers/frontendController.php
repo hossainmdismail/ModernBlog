@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog_Posts;
 use App\Models\Category;
-use App\Models\setting;
 use App\Models\Subscriptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,7 +63,6 @@ class frontendController extends Controller
 
         return view('frontend.index', [
             'premiumRecents'=>$premiumRecent,
-<<<<<<< Updated upstream
             'premiumTops'=>$premiumTop,
             'populars'=>$popular,
             'recents'=>$recent,
@@ -72,12 +70,6 @@ class frontendController extends Controller
             'categorys'=>$categorys,
             'trendings'=>$trending,
             'latests'=>$latest,
-=======
-            'premiumTops'   =>$premiumTop,
-            'populars'      =>$popular,
-            'recents'       =>$recent,
-            'categorys'     =>$categorys,
->>>>>>> Stashed changes
         ]);
     }
 
@@ -145,14 +137,8 @@ class frontendController extends Controller
                 return redirect()->route('subscription'); //Redirect if not an user
             }
         }else{ //checking free blog
-<<<<<<< Updated upstream
             $single_blogs = Blog_Posts::where('slug',$slug)->first();
             $category = Category::select('id','name')->get();
-=======
-            $single_blogs   = Blog_Posts::find($id);
-            $category       = Category::select('id','name')->get();
->>>>>>> Stashed changes
-
             $key            = 'Blog_'.$single_blogs->id;
             if(!session()->has($key)){
                 $single_blogs->increment('views');
